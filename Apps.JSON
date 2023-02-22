@@ -1,0 +1,74 @@
+{
+  "Adobe Reader": {
+    "path64": "$env:SystemDrive\\Program Files\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe",
+    "path32": "$env:SystemDrive\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe",
+    "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Adobe\\Acrobat\\DC",
+    "WingetName": "Adobe.Acrobat.Reader.64-bit",
+    "ChocoName": "adobereader",
+    "NiniteName": null,
+    "NiniteGithubLink": null
+  },
+    "Google Chrome": {
+      "path64": "$env:SystemDrive\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "path32": "$env:SystemDrive\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
+      "WingetName": "Google.Chrome",
+      "ChocoName": "googlechrome",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Chrome Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite Chrome Installer.exe"
+    },
+    "TeamViewer": {
+      "path64": "$env:SystemDrive\\Program Files\\TeamViewer\\TeamViewer.exe",
+      "path32": "$env:SystemDrive\\Program Files (x86)\\TeamViewer\\TeamViewer.exe",
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\TeamViewer",
+      "WingetName": "TeamViewer.TeamViewer",
+      "ChocoName": "teamviewer",
+      "NiniteName": "$pathInstallation\\Source\\Ninite TeamViewer 15 Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite TeamViewer 15 Installer.exe"
+    },
+    "Lenovo Vantage": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "9WZDNCRFJ4MV",
+      "ChocoName": null,
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "Lenovo System Update": {
+      "path64": null,
+      "path32": "$env:SystemDrive\\Program Files (x86)\\Lenovo\\System Update\\tvsu.exe",
+      "pathAppData": null,
+      "WingetName": "Lenovo.SystemUpdate",
+      "ChocoName": "lenovo-thinkvantage-system-update",
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "GeForce Experience": {
+      "path64": "$env:SystemDrive\\Program Files\\NVIDIA Corporation\\NVIDIA GeForce Experience\\NVIDIA GeForce Experience.exe",
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "Nvidia.GeForceExperience",
+      "ChocoName": "geforce-experience",
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "Dell Command Update": {
+      "path64": null,
+      "path32": "$env:SystemDrive\\Program Files (x86)\\Dell\\CommandUpdate\\dellcommandupdate.exe",
+      "pathAppData": null,
+      "WingetName": "Dell.CommandUpdate",
+      "ChocoName": "dellcommandupdate",
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "HP Support Assistant": {
+      "path64": null,
+      "path32": "$env:SystemDrive\\Program Files (x86)\\HP\\HP Support Framework\\hpsupportassistant.dll",
+      "pathAppData": null,
+      "WingetName": null,
+      "ChocoName": "hpsupportassistant",
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    }
+  }
