@@ -29,7 +29,7 @@
     "Lenovo Vantage": {
       "path64": null,
       "path32": null,
-      "pathAppData": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Packages\\E046963F.LenovoCompanion_k1h2ywk1493x8",
       "WingetName": "9WZDNCRFJ4MV",
       "ChocoName": null,
       "NiniteName": null,
