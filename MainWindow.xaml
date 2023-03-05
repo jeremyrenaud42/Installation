@@ -1,0 +1,36 @@
+﻿<Window x:Class="InstallationMenuAppChoice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InstallationMenuAppChoice"
+        mc:Ignorable="d"
+        Title="Choix des applications" Height="300" Width="450">
+    <Grid x:Name="GridInstallationMenuAppChoice">
+        <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <Label x:Name="Llbltitre" Content="Cocher les applications à installer" HorizontalAlignment="Left" Margin="140,10,0,0" VerticalAlignment="Top" Width="193"/>
+        <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Height="28" Width="84" FontSize="14" FontWeight="Bold" IsCancel="True"/>
+        <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572"/>
+        <Label x:Name="lblSystem" Content="System&#xA;" HorizontalAlignment="Left" Margin="180,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
+        <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Margin="24,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxTeamviewer" Content="Teamviewer" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxGeForce" Content="GeForce Experience" HorizontalAlignment="Left" Margin="166,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxLenovoVantage" Content="Lenovo Vantage" HorizontalAlignment="Left" Margin="166,88,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxLenovoSystemUpdate" Content="Lenovo System Update" HorizontalAlignment="Left" Margin="166,108,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxHPSA" Content="HP support Assistant" HorizontalAlignment="Left" Margin="166,128,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Margin="24,146,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxArmouryCrate" Content="Armoury Crate" HorizontalAlignment="Left" Margin="166,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
+        <CheckBox x:Name="chkboxSteam" Content="Steam" HorizontalAlignment="Left" Margin="346,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxMyAsus" Content="My Asus" HorizontalAlignment="Left" Margin="166,169,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxDellsa" Content="Dell Support Assistant" HorizontalAlignment="Left" Margin="166,149,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+        <CheckBox x:Name="chkboxZoom" Content="Zoom" HorizontalAlignment="Left" Margin="346,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxDiscord" Content="Discord" HorizontalAlignment="Left" Margin="346,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxFirefox" Content="Firefox" HorizontalAlignment="Left" Margin="346,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxLibreOffice" Content="Libre Office" HorizontalAlignment="Left" Margin="345,145,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxCdburnerxp" Content="CD Burner XP" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxMSICenter_Copy" Content="MSI Center" HorizontalAlignment="Left" Margin="166,209,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+
+    </Grid>
+</Window>
