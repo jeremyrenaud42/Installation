@@ -20,7 +20,6 @@
         <CheckBox x:Name="chkboxHPSA" Content="HP support Assistant" HorizontalAlignment="Left" Margin="166,128,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
         <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Margin="24,146,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
-        <CheckBox x:Name="chkboxArmouryCrate" Content="Armoury Crate" HorizontalAlignment="Left" Margin="166,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
         <CheckBox x:Name="chkboxSteam" Content="Steam" HorizontalAlignment="Left" Margin="346,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <CheckBox x:Name="chkboxMyAsus" Content="My Asus" HorizontalAlignment="Left" Margin="166,169,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
@@ -30,7 +29,7 @@
         <CheckBox x:Name="chkboxFirefox" Content="Firefox" HorizontalAlignment="Left" Margin="346,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <CheckBox x:Name="chkboxLibreOffice" Content="Libre Office" HorizontalAlignment="Left" Margin="345,145,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <CheckBox x:Name="chkboxCdburnerxp" Content="CD Burner XP" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
-        <CheckBox x:Name="chkboxMSICenter_Copy" Content="MSI Center" HorizontalAlignment="Left" Margin="166,209,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxMSICenter_Copy" Content="MSI Center" HorizontalAlignment="Left" Margin="166,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
 
     </Grid>
 </Window>
