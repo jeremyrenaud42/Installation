@@ -15,7 +15,7 @@
       "WingetName": "Google.Chrome",
       "ChocoName": "googlechrome",
       "NiniteName": "$pathInstallation\\Source\\Ninite Chrome Installer.exe",
-      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite Chrome Installer.exe"
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Chrome Installer.exe"
     },
     "TeamViewer": {
       "path64": "$env:SystemDrive\\Program Files\\TeamViewer\\TeamViewer.exe",
@@ -24,7 +24,7 @@
       "WingetName": "TeamViewer.TeamViewer",
       "ChocoName": "teamviewer",
       "NiniteName": "$pathInstallation\\Source\\Ninite TeamViewer 15 Installer.exe",
-      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite TeamViewer 15 Installer.exe"
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite TeamViewer 15 Installer.exe"
     },
     "Lenovo Vantage": {
       "path64": null,
@@ -70,5 +70,95 @@
       "ChocoName": "hpsupportassistant",
       "NiniteName": null,
       "NiniteGithubLink": null
+    },
+    "VLC": {
+      "path64": "$env:SystemDrive\\Program Files\\VideoLAN\\VLC",
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "XPDM1ZW6815MQM",
+      "ChocoName": "vlc",
+      "NiniteName": "$pathInstallation\\Source\\Ninite VLC Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite VLC Installer.exe"
+    },
+    "7Zip": {
+      "path64": "$env:SystemDrive\\Program Files\\7-Zip\\7z.exe",
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "7zip.7zip",
+      "ChocoName": "7zip",
+      "NiniteName": "$pathInstallation\\Source\\Ninite 7Zip Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite 7Zip Installer.exe"
+    },
+    "Steam": {
+      "path64": null,
+      "path32": "$env:SystemDrive\\Program Files (x86)\\Steam\\Steam.exe",
+      "pathAppData": null,
+      "WingetName": "Valve.Steam",
+      "ChocoName": "steam",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Steam Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Steam Installer.exe"
+    },
+    "MyAsus": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Microsoft\\WindowsApps\\B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy",
+      "WingetName": "9N7R5S6B0ZZH",
+      "ChocoName": null,
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "MSI Center": {
+      "path64": null,
+      "path32": "$env:SystemDrive\\Program Files (x86)\\MSI\\MSI Center",
+      "pathAppData": null,
+      "WingetName": "9NVMNJCR03XV",
+      "ChocoName": null,
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "Zoom": {
+      "path64": "$env:SystemDrive\\Program Files\\Zoom",
+      "path32": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe",
+      "WingetName": "XP99J3KP4XZ4VV",
+      "ChocoName": "zoom",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Zoom Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Zoom Installer.exe"
+    },
+    "Discord": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Discord",
+      "WingetName": "Discord.Discord",
+      "ChocoName": "discord",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Discord Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Discord Installer.exe"
+    },
+    "Firefox": {
+      "path64": "$env:SystemDrive\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "path32": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Microsoft\\WindowsApps\\Mozilla.Firefox_n80bbvh6b1yt2",
+      "WingetName": "9NZVDKPMR9RD",
+      "ChocoName": "firefox",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Firefox Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Firefox Installer.exe"
+    },
+    "Libre Office": {
+      "path64": "$env:SystemDrive\\Program Files\\LibreOffice",
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "TheDocumentFoundation.LibreOffice",
+      "ChocoName": "libreoffice-fresh",
+      "NiniteName": "$pathInstallation\\Source\\Ninite LibreOffice Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite LibreOffice Installer.exe"
+    },
+    "CDBurnerXP": {
+      "path64": "$env:SystemDrive\\Program Files\\CDBurnerXP\\cdbxpp.exe",
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "Canneverbe.CDBurnerXP",
+      "ChocoName": "cdburnerxp",
+      "NiniteName": "$pathInstallation\\Source\\Ninite CDBurnerXP Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite CDBurnerXP Installer.exe"
     }
   }
