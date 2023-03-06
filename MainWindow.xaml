@@ -29,7 +29,7 @@
         <CheckBox x:Name="chkboxFirefox" Content="Firefox" HorizontalAlignment="Left" Margin="346,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <CheckBox x:Name="chkboxLibreOffice" Content="Libre Office" HorizontalAlignment="Left" Margin="345,145,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
         <CheckBox x:Name="chkboxCdburnerxp" Content="CD Burner XP" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
-        <CheckBox x:Name="chkboxMSICenter_Copy" Content="MSI Center" HorizontalAlignment="Left" Margin="166,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
+        <CheckBox x:Name="chkboxMSICenter" Content="MSI Center" HorizontalAlignment="Left" Margin="166,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" IsEnabled="False"/>
 
     </Grid>
 </Window>
