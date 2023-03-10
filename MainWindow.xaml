@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstallationMenuAppChoice"
         mc:Ignorable="d"
-        Title="Personnalisation de l'installation" Height="300" Width="450">
+        Title="Personnalisation de l'installation" Height="330" Width="450">
     <Grid x:Name="GridInstallationMenuAppChoice">
         <TabControl>
             <TabItem Header="Apps" Margin="-2,-2,-52,0" >
                 <Grid Height="255">
                     <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <Label x:Name="Llbltitre" Content="Cocher les applications à installer" HorizontalAlignment="Left" Margin="138,10,0,0" VerticalAlignment="Top" Width="193"/>
-                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="176,217,0,0" VerticalAlignment="Top" Height="28" Width="84" FontSize="14" FontWeight="Bold" IsDefault="True"/>
+                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="176,217,0,0" VerticalAlignment="Top" Height="28" Width="84" FontSize="14" FontWeight="Bold" IsDefault="True" IsCancel="True"/>
                     <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572"/>
                     <Label x:Name="lblSystem" Content="Pilotes&#xA;" HorizontalAlignment="Left" Margin="183,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
                     <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Margin="24,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
@@ -35,12 +35,12 @@
                     <CheckBox x:Name="chkboxMSICenter" Content="MSI Center" HorizontalAlignment="Left" Margin="166,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Settings" Margin="54,0,-108,-2" IsEnabled="False" >
+            <TabItem Header="Settings" Margin="52,-2,-106,0" IsEnabled="False" >
                 <Grid Height="255">
                    
                 </Grid>
             </TabItem>
-            <TabItem Header="Custom" Margin="107,-1,-162,-1" IsEnabled="False" >
+            <TabItem Header="Custom" Margin="104,-2,-159,0" IsEnabled="False" >
                 <Grid Height="255"/>
             </TabItem>
         </TabControl>
