@@ -163,7 +163,7 @@
     },
     "IntelDriver": {
       "path64": null,
-      "path32": null,
+      "path32": "$env:SystemDrive\\Program Files (x86)\\Intel\\Driver and Support Assistant",
       "pathAppData": null,
       "WingetName": "Intel.IntelDriverAndSupportAssistant",
       "ChocoName": "intel-dsa",
@@ -171,7 +171,7 @@
       "NiniteGithubLink": null
     },
     "Macrium": {
-      "path64": null,
+      "path64": "$env:SystemDrive\\Program Files\\Macrium\\Reflect\\Reflect.exe",
       "path32": null,
       "pathAppData": null,
       "WingetName": null,
@@ -182,7 +182,7 @@
     "Spotify": {
       "path64": null,
       "path32": null,
-      "pathAppData": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\Spotify",
       "WingetName": "Spotify.Spotify",
       "ChocoName": "spotify",
       "NiniteName": "$pathInstallation\\Source\\Ninite Spotify Installer.exe",
@@ -191,7 +191,7 @@
     "Opera": {
       "path64": null,
       "path32": null,
-      "pathAppData": null,
+      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\Opera Software",
       "WingetName": "XPDBZ4MPRKNN30",
       "ChocoName": "opera-gx",
       "NiniteName": "$pathInstallation\\Source\\Ninite Opera Installer.exe",
