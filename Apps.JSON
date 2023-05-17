@@ -160,5 +160,50 @@
       "ChocoName": "cdburnerxp",
       "NiniteName": "$pathInstallation\\Source\\Ninite CDBurnerXP Installer.exe",
       "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite CDBurnerXP Installer.exe"
+    },
+    "IntelDriver": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "Intel.IntelDriverAndSupportAssistant",
+      "ChocoName": "intel-dsa",
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "Macrium": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": null,
+      "ChocoName": "reflect-free",
+      "NiniteName": null,
+      "NiniteGithubLink": null
+    },
+    "Spotify": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "Spotify.Spotify",
+      "ChocoName": "spotify",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Spotify Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Spotify Installer.exe"
+    },
+    "Opera": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "XPDBZ4MPRKNN30",
+      "ChocoName": "opera-gx",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Opera Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Opera Installer.exe"
+    },
+    "Thunderbird": {
+      "path64": null,
+      "path32": null,
+      "pathAppData": null,
+      "WingetName": "Mozilla.Thunderbird",
+      "ChocoName": "thunderbird",
+      "NiniteName": "$pathInstallation\\Source\\Ninite Thunderbird Installer.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Thunderbird Installer.exe"
     }
-  }
+}
