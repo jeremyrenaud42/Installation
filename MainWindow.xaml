@@ -41,24 +41,30 @@
             </TabItem>
             <TabItem Header="Settings" Margin="52,-2,-106,0" >
                 <Grid x:Name="GridSettings" Height="325">
-                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="261,29,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="160" Height="28" FontSize="16" IsEnabled="False"/>
-                    <Label Content="Nom du disque" HorizontalAlignment="Left" Margin="152,31,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Restart Timer" HorizontalAlignment="Left" Margin="152,62,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="CbBoxRestartTimer" SelectedIndex="1" HorizontalAlignment="Left" Margin="261,66,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False">
+                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="128,27,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="28" FontSize="16" IsEnabled="False"/>
+                    <Label Content="Nom du disque" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                    <Label Content="" HorizontalAlignment="Left" Margin="23,90,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Update Windows" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Max size" HorizontalAlignment="Left" Margin="123,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.498,-0.495"/>
+                    <Label Content="Restart Timer" HorizontalAlignment="Left" Margin="243,67,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="CbBoxRestartTimer" SelectedIndex="5" HorizontalAlignment="Left" Margin="328,71,0,0" VerticalAlignment="Top" Width="60" IsEnabled="False">
                         <ComboBoxItem Content = "0" />
                         <ComboBoxItem Content = "1" />
                         <ComboBoxItem Content = "5" />
                         <ComboBoxItem Content = "15" />
                     </ComboBox>
-                    <Label Content="Update size" HorizontalAlignment="Left" Margin="152,93,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Confidentialité" HorizontalAlignment="Left" Margin="154,124,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Default browser" HorizontalAlignment="Left" Margin="152,155,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Default icon" HorizontalAlignment="Left" Margin="154,186,0,0" VerticalAlignment="Top"/>
-
+                    <CheckBox Content="Update MsStore" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+                    <CheckBox Content="Cofidentialité" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.773,3.149"/>
+                    <CheckBox Content="Fast startup" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="CbBoxSize" SelectedIndex="250" HorizontalAlignment="Left" Margin="188,69,0,0" VerticalAlignment="Top" Width="60" IsEnabled="False">
+                        <ComboBoxItem Content = "100" />
+                        <ComboBoxItem Content = "250" />
+                        <ComboBoxItem Content = "500" />
+                        <ComboBoxItem Content = "1000" />
+                    </ComboBox>
+                    <CheckBox Content="bitlocker" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top"/>
                 </Grid>
-            </TabItem>
-            <TabItem Header="Custom" Margin="104,-2,-159,0" IsEnabled="False" >
-                <Grid Height="255"/>
             </TabItem>
         </TabControl>
     </Grid>
