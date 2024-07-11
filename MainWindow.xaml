@@ -52,10 +52,10 @@
                         <ComboBoxItem Content = "5" />
                         <ComboBoxItem Content = "15" />
                     </ComboBox>
-                    <CheckBox Content="Update MsStore" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" IsChecked="False"/>
-                    <CheckBox Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" IsChecked="False"/>
-                    <CheckBox Content="Cofidentialité" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.773,3.149" IsChecked="False"/>
-                    <CheckBox Content="Fast startup" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="False"/>
+                    <CheckBox Content="Update MsStore" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Content="Cofidentialité" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.773,3.149"/>
+                    <CheckBox Content="Fast startup" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="CbBoxSize" SelectedIndex="250" HorizontalAlignment="Left" Margin="188,69,0,0" VerticalAlignment="Top" Width="60" IsEnabled="False">
                         <ComboBoxItem Content = "100" />
                         <ComboBoxItem Content = "250" />
@@ -63,7 +63,7 @@
                         <ComboBoxItem Content = "1000" />
                     </ComboBox>
                     <CheckBox Content="Bitlocker" HorizontalAlignment="Left" Margin="11,228,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1" IsChecked="False"/>
+                    <CheckBox Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>
