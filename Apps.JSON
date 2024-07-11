@@ -32,7 +32,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Packages\\E046963F.LenovoCompanion_k1h2ywk1493x8",
       "WingetName": null,
       "ChocoName": null,
-      "NiniteName": null,
+      "NiniteName": "$pathInstallation\\Source\\Lenovo Vantage Installer.exe",
       "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Lenovo Vantage Installer.exe"
     },
     "Lenovo System Update": {
@@ -176,8 +176,8 @@
       "pathAppData": null,
       "WingetName": null,
       "ChocoName": "reflect-free",
-      "NiniteName": null,
-      "NiniteGithubLink": null
+      "NiniteName": "$pathInstallation\\Source\\ReflectDLHF.exe",
+      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/ReflectDLHF.exe"
     },
     "Spotify": {
       "path64": null,
