@@ -8,10 +8,10 @@
         Title="Personnalisation de l'installation" Height="370" Width="450">
     <Grid x:Name="GridInstallationMenuAppChoice">
         <TabControl>
-            <TabItem Header="Apps" Margin="-2,-2,-52,0" >
+            <TabItem x:Name="tabApps" Header="Apps" Margin="-2,-2,-52,0" >
                 <Grid x:Name="GridApps" Height="325" Width="444" VerticalAlignment="Top">
                     <Label x:Name="Llbltitre" Content="Cocher les applications à installer" HorizontalAlignment="Left" Margin="138,10,0,0" VerticalAlignment="Top" Width="193"/>
-                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="176,261,0,0" VerticalAlignment="Top" Height="28" Width="84" FontSize="14" FontWeight="Bold" IsDefault="True" IsCancel="True"/>
+                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="151,242,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True" IsCancel="True"/>
                     <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572"/>
                     <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Margin="183,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
                     <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
@@ -37,33 +37,36 @@
                     <CheckBox x:Name="chkboxSpotify" Content="Spotify" HorizontalAlignment="Left" Margin="345,189,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" />
                     <CheckBox x:Name="chkboxOpera" Content="Opera" HorizontalAlignment="Left" Margin="345,168,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxMacrium" Content="Macrium" HorizontalAlignment="Left" Margin="24,185,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+                    <Button x:Name="btnReturn" Content="Retour au Menu" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" Width="115"/>
+                    <Button x:Name="btnclose" Content="Fermer" HorizontalAlignment="Left" Margin="156,295,0,0" VerticalAlignment="Top" Width="115"/>
+                    <Button x:Name="btnQuit" Content="Quitter et supprimer" HorizontalAlignment="Left" Margin="320,295,0,0" VerticalAlignment="Top" Width="115"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Settings" Margin="52,-2,-106,0" >
+            <TabItem x:Name="tabSettings" Header="Settings" Margin="52,-2,-106,0" >
                 <Grid x:Name="GridSettings" Height="325">
-                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="128,27,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" IsEnabled="False"/>
-                    <Label Content="Nom du disque" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Update Windows" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Max size" HorizontalAlignment="Left" Margin="123,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.498,-0.495"/>
-                    <Label Content="Restart Timer" HorizontalAlignment="Left" Margin="243,67,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="CbBoxRestartTimer" SelectedIndex="5" HorizontalAlignment="Left" Margin="328,71,0,0" VerticalAlignment="Top" Width="60" IsEnabled="False">
-                        <ComboBoxItem Content = "0" />
-                        <ComboBoxItem Content = "1" />
-                        <ComboBoxItem Content = "5" />
-                        <ComboBoxItem Content = "15" />
+                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="128,27,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
+                    <Label x:Name="lblDisk" Content="Nom du disque" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblUpdate" Content="Update Windows" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblUpdateSize" Content="Max size" HorizontalAlignment="Left" Margin="123,65,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblUpdateTimer" Content="Restart Timer" HorizontalAlignment="Left" Margin="243,67,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="CbBoxRestartTimer" SelectedIndex="5" HorizontalAlignment="Left" Margin="328,71,0,0" VerticalAlignment="Top" Width="60">
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_0" Content = "0" />
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_1" Content = "1" />
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_5" Content = "5" />
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_15" Content = "15" />
                     </ComboBox>
-                    <CheckBox Content="Update MsStore" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Cofidentialité" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.773,3.149"/>
-                    <CheckBox Content="Fast startup" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="CbBoxSize" SelectedIndex="250" HorizontalAlignment="Left" Margin="188,69,0,0" VerticalAlignment="Top" Width="60" IsEnabled="False">
-                        <ComboBoxItem Content = "100" />
-                        <ComboBoxItem Content = "250" />
-                        <ComboBoxItem Content = "500" />
-                        <ComboBoxItem Content = "1000" />
+                    <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox x:Name="chkboxConfi" Content="Confidentialité" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox x:Name="chkboxStartup" Content="Fast startup" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <CheckBox x:Name="chkboxBitlocker" Content="Bitlocker" HorizontalAlignment="Left" Margin="11,228,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                    <CheckBox x:Name="chkboxIcone" Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                    <ComboBox x:Name="CbBoxSize" SelectedIndex="250" HorizontalAlignment="Left" Margin="188,69,0,0" VerticalAlignment="Top" Width="60">
+                        <ComboBoxItem x:Name="CbBoxSize_125" Content = "125" />
+                        <ComboBoxItem x:Name="CbBoxSize_250" Content = "250" />
+                        <ComboBoxItem x:Name="CbBoxSize_500" Content = "500" />
+                        <ComboBoxItem x:Name="CbBoxSize_Aucune" Content = "Aucune" />
                     </ComboBox>
-                    <CheckBox Content="Bitlocker" HorizontalAlignment="Left" Margin="11,228,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
         </TabControl>
