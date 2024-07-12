@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstallationMenuAppChoice"
         mc:Ignorable="d"
-        Title="Personnalisation de l'installation" Height="370" Width="450">
+        Title="Personnalisation de l'installation" Height="412" Width="498">
     <Grid x:Name="GridInstallationMenuAppChoice">
         <TabControl>
             <TabItem x:Name="tabApps" Header="Apps" Margin="-2,-2,-52,0" >
