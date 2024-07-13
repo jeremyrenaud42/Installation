@@ -5,8 +5,8 @@
     "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Adobe\\Acrobat\\DC",
     "WingetName": "Adobe.Acrobat.Reader.64-bit",
     "ChocoName": "adobereader",
-    "NiniteName": null,
-    "NiniteGithubLink": null
+    "NiniteName": "Reader_fr_install.exe",
+    "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Reader_fr_install.exe"
   },
     "Google Chrome": {
       "path64": "$env:SystemDrive\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
