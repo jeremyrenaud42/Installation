@@ -15,8 +15,8 @@
                     <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572"/>
                     <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Margin="183,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
                     <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
-                    <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Margin="24,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+                    <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True"/>
+                    <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Margin="24,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True"/>
                     <CheckBox x:Name="chkboxTeamviewer" Content="Teamviewer" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Margin="24,146,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
