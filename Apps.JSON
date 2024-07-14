@@ -196,14 +196,5 @@
       "ChocoName": "opera-gx",
       "NiniteName": "$pathInstallation\\Source\\Ninite Opera Installer.exe",
       "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Opera Installer.exe"
-    },
-    "Thunderbird": {
-      "path64": null,
-      "path32": null,
-      "pathAppData": null,
-      "WingetName": "Mozilla.Thunderbird",
-      "ChocoName": "thunderbird",
-      "NiniteName": "$pathInstallation\\Source\\Ninite Thunderbird Installer.exe",
-      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Thunderbird Installer.exe"
     }
 }
