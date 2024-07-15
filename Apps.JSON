@@ -161,7 +161,7 @@
       "NiniteName": "$pathInstallation\\Source\\Ninite CDBurnerXP Installer.exe",
       "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite CDBurnerXP Installer.exe"
     },
-    "IntelDriver": {
+    "Intel Drivers Support": {
       "path64": null,
       "path32": "$env:SystemDrive\\Program Files (x86)\\Intel\\Driver and Support Assistant",
       "pathAppData": null,
