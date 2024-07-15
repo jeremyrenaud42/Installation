@@ -110,7 +110,7 @@
     "MSI Center": {
       "path64": null,
       "path32": "$env:SystemDrive\\Program Files (x86)\\MSI\\MSI Center",
-      "pathAppData": null,
+      "pathAppData": "Registry::HKEY_CURRENT_USER\\Software\\Classes\\AppX5drckkyba5sam49z8m9k4aqzfy9cmbw9",
       "WingetName": "9NVMNJCR03XV",
       "ChocoName": null,
       "NiniteName": null,
