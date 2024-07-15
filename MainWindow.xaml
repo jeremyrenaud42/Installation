@@ -17,17 +17,17 @@
                     <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
                     <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True"/>
                     <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Margin="24,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxTeamviewer" Content="Teamviewer" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+                    <CheckBox x:Name="chkboxTeamviewer" Content="TeamViewer" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Margin="24,146,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxCdburnerxp" Content="CD Burner XP" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+                    <CheckBox x:Name="chkboxCdburnerxp" Content="CDBurnerXP" HorizontalAlignment="Left" Margin="24,165,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxGeForce" Content="GeForce Experience" HorizontalAlignment="Left" Margin="166,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxLenovoVantage" Content="Lenovo Vantage" HorizontalAlignment="Left" Margin="166,88,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxLenovoSystemUpdate" Content="Lenovo System Update" HorizontalAlignment="Left" Margin="166,108,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxHPSA" Content="HP support Assistant" HorizontalAlignment="Left" Margin="166,128,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxMSICenter" Content="MSI Center" HorizontalAlignment="Left" Margin="166,173,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxMyAsus" Content="My Asus" HorizontalAlignment="Left" Margin="166,193,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxDellsa" Content="Dell Support Assistant" HorizontalAlignment="Left" Margin="166,149,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+                    <CheckBox x:Name="chkboxMyAsus" Content="MyAsus" HorizontalAlignment="Left" Margin="166,193,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
+                    <CheckBox x:Name="chkboxDellsa" Content="Dell Command Update" HorizontalAlignment="Left" Margin="166,149,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxSteam" Content="Steam" HorizontalAlignment="Left" Margin="346,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxZoom" Content="Zoom" HorizontalAlignment="Left" Margin="346,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxDiscord" Content="Discord" HorizontalAlignment="Left" Margin="346,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
