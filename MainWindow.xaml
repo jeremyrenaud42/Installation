@@ -46,7 +46,7 @@
                 <Grid x:Name="GridSettings" Height="325">
                     <CheckBox x:Name="chkboxDisque" Content="Disque" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
                     <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Margin="90,18,0,0" VerticalAlignment="Top" FontSize="14"/>
-                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="138,21,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" RenderTransformOrigin="-0.108,0.459"/>
+                    <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Margin="138,21,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" RenderTransformOrigin="-0.108,0.459"/>
                     <CheckBox x:Name="chkboxWindowsUpdate" Content="Update Windows" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
                     <Label x:Name="lblUpdateTimer" Content="Restart Timer (seconds)" HorizontalAlignment="Left" Margin="284,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.506,0.452"/>
                     <ComboBox x:Name="CbBoxRestartTimer" SelectedItem="5" HorizontalAlignment="Left" Margin="422,49,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="1.707,0.808">
