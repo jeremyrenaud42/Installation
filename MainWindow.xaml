@@ -44,29 +44,31 @@
             </TabItem>
             <TabItem x:Name="tabSettings" Header="Settings" Margin="52,-2,-106,0" >
                 <Grid x:Name="GridSettings" Height="325">
-                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="128,27,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
-                    <Label x:Name="lblDisk" Content="Nom du disque" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblUpdate" Content="Update Windows" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblUpdateSize" Content="Max size" HorizontalAlignment="Left" Margin="123,65,0,0" VerticalAlignment="Top"/>
-                    <Label x:Name="lblUpdateTimer" Content="Restart Timer" HorizontalAlignment="Left" Margin="243,67,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="CbBoxRestartTimer" SelectedIndex="5" HorizontalAlignment="Left" Margin="328,71,0,0" VerticalAlignment="Top" Width="60">
+                    <CheckBox x:Name="chkboxDisque" Content="Disque" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Margin="90,18,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="TxtBkDiskName" HorizontalAlignment="Left" Margin="138,21,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" RenderTransformOrigin="-0.108,0.459"/>
+                    <CheckBox x:Name="chkboxWindowsUpdate" Content="Update Windows" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <Label x:Name="lblUpdateTimer" Content="Restart Timer (seconds)" HorizontalAlignment="Left" Margin="284,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.506,0.452"/>
+                    <ComboBox x:Name="CbBoxRestartTimer" SelectedItem="5" HorizontalAlignment="Left" Margin="422,49,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="1.707,0.808">
                         <ComboBoxItem x:Name="CbBoxRestartTimer_0" Content = "0" />
-                        <ComboBoxItem x:Name="CbBoxRestartTimer_1" Content = "1" />
-                        <ComboBoxItem x:Name="CbBoxRestartTimer_5" Content = "5" />
-                        <ComboBoxItem x:Name="CbBoxRestartTimer_15" Content = "15" />
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_1" Content = "60" />
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_5" Content = "300" />
+                        <ComboBoxItem x:Name="CbBoxRestartTimer_15" Content = "900" />
                     </ComboBox>
-                    <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Margin="10,94,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxConfi" Content="Confidentialité" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxStartup" Content="Fast startup" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxBitlocker" Content="Bitlocker" HorizontalAlignment="Left" Margin="11,228,0,0" VerticalAlignment="Top" IsEnabled="False"/>
-                    <CheckBox x:Name="chkboxIcone" Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                    <ComboBox x:Name="CbBoxSize" SelectedIndex="250" HorizontalAlignment="Left" Margin="188,69,0,0" VerticalAlignment="Top" Width="60">
+                    <Label x:Name="lblUpdateSize" Content="Max size (mb)" HorizontalAlignment="Left" Margin="143,47,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="CbBoxSize" SelectedItem="250" HorizontalAlignment="Left" Margin="226,51,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.183,0.526">
                         <ComboBoxItem x:Name="CbBoxSize_125" Content = "125" />
                         <ComboBoxItem x:Name="CbBoxSize_250" Content = "250" />
                         <ComboBoxItem x:Name="CbBoxSize_500" Content = "500" />
                         <ComboBoxItem x:Name="CbBoxSize_Aucune" Content = "Aucune" />
                     </ComboBox>
+                    <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxConfi" Content="Confidentialité" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxStartup" Content="Fast startup" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxExplorer" Content="Explorer" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxIcone" Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxBitlocker" Content="Bitlocker" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
                 </Grid>
             </TabItem>
         </TabControl>
