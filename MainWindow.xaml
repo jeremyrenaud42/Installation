@@ -11,7 +11,7 @@
             <TabItem x:Name="tabApps" Header="Apps" Margin="-2,-2,-52,0" >
                 <Grid x:Name="GridApps" Height="325" Width="444" VerticalAlignment="Top">
                     <Label x:Name="Llbltitre" Content="Cocher les applications à installer" HorizontalAlignment="Left" Margin="138,10,0,0" VerticalAlignment="Top" Width="193"/>
-                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="151,242,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True" IsCancel="True"/>
+                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="151,242,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True"/>
                     <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572"/>
                     <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Margin="183,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
                     <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
@@ -38,7 +38,7 @@
                     <CheckBox x:Name="chkboxOpera" Content="Opera" HorizontalAlignment="Left" Margin="345,168,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <CheckBox x:Name="chkboxMacrium" Content="Macrium" HorizontalAlignment="Left" Margin="24,185,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
                     <Button x:Name="btnReturn" Content="Retour au Menu" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" Width="115"/>
-                    <Button x:Name="btnclose" Content="Fermer" HorizontalAlignment="Left" Margin="156,295,0,0" VerticalAlignment="Top" Width="115"/>
+                    <Button x:Name="btnclose" Content="Fermer" HorizontalAlignment="Left" Margin="156,295,0,0" VerticalAlignment="Top" Width="115" IsCancel="True"/>
                     <Button x:Name="btnQuit" Content="Quitter et supprimer" HorizontalAlignment="Left" Margin="320,295,0,0" VerticalAlignment="Top" Width="115"/>
                 </Grid>
             </TabItem>
