@@ -44,9 +44,9 @@
             </TabItem>
             <TabItem x:Name="tabSettings" Header="Settings" Margin="52,-2,-106,0" >
                 <Grid x:Name="GridSettings" Height="325">
-                    <CheckBox x:Name="chkboxDisque" Content="Disque" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Margin="90,18,0,0" VerticalAlignment="Top" FontSize="14"/>
-                    <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Margin="138,21,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" RenderTransformOrigin="-0.108,0.459"/>
+                    <CheckBox x:Name="chkboxDisque" Content="Renommer Disque" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Margin="161,18,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Margin="214,17,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" RenderTransformOrigin="-0.108,0.459"/>
                     <CheckBox x:Name="chkboxWindowsUpdate" Content="Update Windows" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
                     <Label x:Name="lblUpdateTimer" Content="Restart Timer (seconds)" HorizontalAlignment="Left" Margin="284,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.506,0.452"/>
                     <ComboBox x:Name="CbBoxRestartTimer" HorizontalAlignment="Left" Margin="422,49,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="1.707,0.808">
@@ -62,11 +62,11 @@
                     </ComboBox>
                     <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
                     <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxConfi" Content="Confidentialité" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxStartup" Content="Fast startup" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxExplorer" Content="Explorer" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxIcone" Content="Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxBitlocker" Content="Bitlocker" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxConfi" Content="Améliorer Confidentialité" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxStartup" Content="Désactiver Fast startup" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxExplorer" Content="Configurer Explorer" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxIcone" Content="Afficher Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
+                    <CheckBox x:Name="chkboxBitlocker" Content="Désactiver Bitlocker" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
                 </Grid>
             </TabItem>
         </TabControl>
