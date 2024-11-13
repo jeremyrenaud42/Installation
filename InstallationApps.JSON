@@ -152,15 +152,6 @@
       "NiniteName": "$pathInstallation\\Source\\Ninite LibreOffice Installer.exe",
       "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite LibreOffice Installer.exe"
     },
-    "CDBurnerXP": {
-      "path64": "$env:SystemDrive\\Program Files\\CDBurnerXP\\cdbxpp.exe",
-      "path32": null,
-      "pathAppData": null,
-      "WingetName": "Canneverbe.CDBurnerXP",
-      "ChocoName": "cdburnerxp",
-      "NiniteName": "$pathInstallation\\Source\\Ninite CDBurnerXP Installer.exe",
-      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite CDBurnerXP Installer.exe"
-    },
     "Intel Drivers Support": {
       "path64": null,
       "path32": "$env:SystemDrive\\Program Files (x86)\\Intel\\Driver and Support Assistant",
@@ -178,23 +169,5 @@
       "ChocoName": "reflect-free",
       "NiniteName": "$pathInstallation\\Source\\ReflectDLHF.exe",
       "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/ReflectDLHF.exe"
-    },
-    "Spotify": {
-      "path64": null,
-      "path32": null,
-      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\Spotify",
-      "WingetName": "Spotify.Spotify",
-      "ChocoName": "spotify",
-      "NiniteName": "$pathInstallation\\Source\\Ninite Spotify Installer.exe",
-      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Spotify Installer.exe"
-    },
-    "Opera": {
-      "path64": null,
-      "path32": null,
-      "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\Opera Software",
-      "WingetName": "XPDBZ4MPRKNN30",
-      "ChocoName": "opera-gx",
-      "NiniteName": "$pathInstallation\\Source\\Ninite Opera Installer.exe",
-      "NiniteGithubLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Opera Installer.exe"
     }
 }
