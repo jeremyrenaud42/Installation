@@ -5,67 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstallationMenuAppChoice"
         mc:Ignorable="d"
-        Title="Personnalisation de l'installation" Height="412" Width="498">
-    <Grid x:Name="GridInstallationMenuAppChoice">
-        <TabControl>
-            <TabItem x:Name="tabApps" Header="Apps" Margin="-2,-2,-52,0" >
-                <Grid x:Name="GridApps" Height="325" Width="444" VerticalAlignment="Top">
-                    <Label x:Name="Llbltitre" Content="Cocher les applications à installer" HorizontalAlignment="Left" Margin="138,10,0,0" VerticalAlignment="Top" Width="193"/>
-                    <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Margin="151,242,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True"/>
-                    <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Margin="31,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572"/>
-                    <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Margin="183,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
-                    <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Margin="346,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176"/>
-                    <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Margin="24,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True"/>
-                    <CheckBox x:Name="chkboxTeamviewer" Content="TeamViewer" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Margin="24,126,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Margin="24,146,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxMacrium" Content="Macrium" HorizontalAlignment="Left" Margin="24,166,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxGeForce" Content="GeForce Experience" HorizontalAlignment="Left" Margin="166,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxLenovoVantage" Content="Lenovo Vantage" HorizontalAlignment="Left" Margin="166,88,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxLenovoSystemUpdate" Content="Lenovo System Update" HorizontalAlignment="Left" Margin="166,108,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxHPSA" Content="HP support Assistant" HorizontalAlignment="Left" Margin="166,128,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxMSICenter" Content="MSI Center" HorizontalAlignment="Left" Margin="166,173,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxMyAsus" Content="MyAsus" HorizontalAlignment="Left" Margin="166,193,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxDellsa" Content="Dell Command Update" HorizontalAlignment="Left" Margin="166,149,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxSteam" Content="Steam" HorizontalAlignment="Left" Margin="346,65,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxZoom" Content="Zoom" HorizontalAlignment="Left" Margin="346,85,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxDiscord" Content="Discord" HorizontalAlignment="Left" Margin="346,105,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxFirefox" Content="Firefox" HorizontalAlignment="Left" Margin="346,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxLibreOffice" Content="Libre Office" HorizontalAlignment="Left" Margin="345,145,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <CheckBox x:Name="chkboxIntel" Content="Intel Drivers Support" HorizontalAlignment="Left" Margin="166,213,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False"/>
-                    <Button x:Name="btnReturn" Content="Retour au Menu" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top" Width="115"/>
-                    <Button x:Name="btnclose" Content="Fermer" HorizontalAlignment="Left" Margin="156,295,0,0" VerticalAlignment="Top" Width="115" IsCancel="True"/>
-                    <Button x:Name="btnQuit" Content="Quitter et supprimer" HorizontalAlignment="Left" Margin="320,295,0,0" VerticalAlignment="Top" Width="115"/>
-                </Grid>
-            </TabItem>
-            <TabItem x:Name="tabSettings" Header="Settings" Margin="52,-2,-106,0" >
-                <Grid x:Name="GridSettings" Height="325">
-                    <CheckBox x:Name="chkboxDisque" Content="Renommer Disque" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Margin="161,18,0,0" VerticalAlignment="Top" FontSize="14"/>
-                    <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Margin="214,17,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16" RenderTransformOrigin="-0.108,0.459"/>
-                    <CheckBox x:Name="chkboxWindowsUpdate" Content="Update Windows" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <Label x:Name="lblUpdateTimer" Content="Restart Timer (seconds)" HorizontalAlignment="Left" Margin="284,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.506,0.452"/>
-                    <ComboBox x:Name="CbBoxRestartTimer" HorizontalAlignment="Left" Margin="422,49,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="1.707,0.808">
-                        <ComboBoxItem x:Name="CbBoxRestartTimer_1" Content = "60" />
-                        <ComboBoxItem x:Name="CbBoxRestartTimer_5" Content = "300" />
-                        <ComboBoxItem x:Name="CbBoxRestartTimer_15" Content = "900" />
-                    </ComboBox>
-                    <Label x:Name="lblUpdateSize" Content="Max size (mb)" HorizontalAlignment="Left" Margin="143,47,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="CbBoxSize" HorizontalAlignment="Left" Margin="226,51,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.183,0.526">
-                        <ComboBoxItem x:Name="CbBoxSize_250" Content = "250" />
-                        <ComboBoxItem x:Name="CbBoxSize_500" Content = "1000" />
-                        <ComboBoxItem x:Name="CbBoxSize_Aucune" Content = "9999" />
-                    </ComboBox>
-                    <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxConfi" Content="Améliorer Confidentialité" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxStartup" Content="Désactiver Fast startup" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxExplorer" Content="Configurer Explorer" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxIcone" Content="Afficher Icones systèmes sur le bureau" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                    <CheckBox x:Name="chkboxBitlocker" Content="Désactiver Bitlocker" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="14"/>
-                </Grid>
-            </TabItem>
-        </TabControl>
+        ResizeMode="CanMinimize"
+        WindowStyle="None"
+        Title="Personnalisation de l'installation" Height="688" Width="1041">
+    <Grid x:Name="GridMain">
+        <Image x:Name="PictureBoxBackGround" Source="C:\_Tech\Applications\source\Images\Background_menu.jpeg" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Rectangle Fill="Black" Opacity="0.55" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid x:Name="GridToolbar" Margin="0,0,0,638"> 
+            <Rectangle x:Name="bar" Fill="DarkRed" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1041" Height="40"></Rectangle>
+            <Label x:Name="Llbltitre2" Content="Personnalisation de l'installation" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Margin="0,-10,0,0" FontSize="27"/>
+            <Button x:Name="btnclose" Content="X" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="27" Background="Transparent"/>
+        </Grid>
+        <Grid x:Name="GridInstallationMenuAppChoice" Margin="0,40,0,0">
+            <Label x:Name="Llbltitre" Content="Cocher les applications à installer" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="390" Margin="326,10,0,0" FontSize="25"/>
+            <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Foreground="Azure" Margin="200,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.572" FontSize="18"/>
+            <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Foreground="Azure" Margin="415,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176" FontSize="18"/>
+            <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Foreground="Azure" Margin="663,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.368,-0.176" FontSize="18"/>
+            <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Foreground="Azure" Margin="150,100,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Foreground="Azure" Margin="150,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxTeamviewer" Content="TeamViewer" HorizontalAlignment="Left" Foreground="Azure" Margin="150,150,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Foreground="Azure" Margin="150,175,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Foreground="Azure" Margin="150,200,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxMacrium" Content="Macrium" HorizontalAlignment="Left" Foreground="Azure" Margin="150,225,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxGeForce" Content="GeForce Experience" HorizontalAlignment="Left" Foreground="Azure" Margin="375,100,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxLenovoVantage" Content="Lenovo Vantage" HorizontalAlignment="Left" Foreground="Azure" Margin="375,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxLenovoSystemUpdate" Content="Lenovo System Update" HorizontalAlignment="Left" Foreground="Azure" Margin="375,150,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxHPSA" Content="HP support Assistant" HorizontalAlignment="Left" Foreground="Azure" Margin="375,175,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxMSICenter" Content="MSI Center" HorizontalAlignment="Left" Foreground="Azure" Margin="375,200,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxMyAsus" Content="MyAsus" HorizontalAlignment="Left" Foreground="Azure" Margin="375,225,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxDellsa" Content="Dell Command Update" HorizontalAlignment="Left" Foreground="Azure" Margin="375,250,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxSteam" Content="Steam" HorizontalAlignment="Left" Foreground="Azure" Margin="675,100,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxZoom" Content="Zoom" HorizontalAlignment="Left" Foreground="Azure" Margin="675,125,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxDiscord" Content="Discord" HorizontalAlignment="Left" Foreground="Azure" Margin="675,150,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxFirefox" Content="Firefox" HorizontalAlignment="Left" Foreground="Azure" Margin="675,175,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxLibreOffice" Content="Libre Office" HorizontalAlignment="Left" Foreground="Azure" Margin="675,200,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxIntel" Content="Intel Drivers Support" HorizontalAlignment="Left" Foreground="Azure" Margin="375,278,0,0" VerticalAlignment="Top" AllowDrop="True" IsChecked="False" FontSize="15"/>
+            <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="460,580,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True"/>
+            <Button x:Name="btnReturn" Content="Retour au Menu" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="320,580,0,0" VerticalAlignment="Top" Width="115"/>
+            <Button x:Name="btnQuit" Content="Quitter et supprimer" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="600,580,185,0" VerticalAlignment="Top" Width="116"/>
+            <CheckBox x:Name="chkboxDisque" Content="Renommer Disque" HorizontalAlignment="Left" Foreground="Azure" Margin="575,370,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Foreground="Azure" Margin="575,400,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="-0.647,2.422"/>
+            <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Foreground="Black" Margin="625,400,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
+            <CheckBox x:Name="chkboxWindowsUpdate" Content="Update Windows" HorizontalAlignment="Left" Foreground="Azure" Margin="225,370,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <Label x:Name="lblUpdateTimer" Content="Restart Timer (seconds)" HorizontalAlignment="Left" Foreground="Azure" Margin="325,390,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="CbBoxRestartTimer" HorizontalAlignment="Left" Margin="325,415,0,0" VerticalAlignment="Top" Width="60">
+                <ComboBoxItem x:Name="CbBoxRestartTimer_1" Content = "60" />
+                <ComboBoxItem x:Name="CbBoxRestartTimer_5" Content = "300" />
+                <ComboBoxItem x:Name="CbBoxRestartTimer_15" Content = "900" />
+            </ComboBox>
+            <Label x:Name="lblUpdateSize" Content="Max size (mb)" HorizontalAlignment="Left" Foreground="Azure" Margin="225,390,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="CbBoxSize" HorizontalAlignment="Left" Margin="225,415,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.183,0.526">
+                <ComboBoxItem x:Name="CbBoxSize_250" Content = "250" />
+                <ComboBoxItem x:Name="CbBoxSize_500" Content = "1000" />
+                <ComboBoxItem x:Name="CbBoxSize_Aucune" Content = "9999" />
+            </ComboBox>
+            <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Foreground="Azure" Margin="225,450,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Foreground="Azure" Margin="225,525,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxConfi" Content="Améliorer Confidentialité" HorizontalAlignment="Left" Foreground="Azure" Margin="575,500,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxStartup" Content="Désactiver Fast startup" HorizontalAlignment="Left" Foreground="Azure" Margin="225,500,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxExplorer" Content="Configurer Explorer" HorizontalAlignment="Left" Foreground="Azure" Margin="575,450,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxIcone" Content="Afficher Icones systèmes sur le bureau" HorizontalAlignment="Left" Foreground="Azure" Margin="575,475,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxBitlocker" Content="Désactiver Bitlocker" HorizontalAlignment="Left" Foreground="Azure" Margin="225,475,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15" RenderTransformOrigin="3.218,0.669"/>
+            <Label x:Name="Llbltitre_Copy" Content="Paramètres" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="135" Margin="404,312,0,0" FontSize="25"/>
+        </Grid>
     </Grid>
 </Window>
