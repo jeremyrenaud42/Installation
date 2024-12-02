@@ -43,6 +43,7 @@
             <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="460,580,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True"/>
             <Button x:Name="btnReturn" Content="Retour au Menu" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="320,580,0,0" VerticalAlignment="Top" Width="115"/>
             <Button x:Name="btnQuit" Content="Quitter et supprimer" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="600,580,185,0" VerticalAlignment="Top" Width="116"/>
+            <Grid x:Name="GridSettings">
             <CheckBox x:Name="chkboxDisque" Content="Renommer Disque" HorizontalAlignment="Left" Foreground="Azure" Margin="575,370,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
             <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Foreground="Azure" Margin="575,400,0,0" VerticalAlignment="Top" FontSize="15" RenderTransformOrigin="-0.647,2.422"/>
             <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Foreground="Black" Margin="625,400,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="120" Height="26" FontSize="16"/>
@@ -67,6 +68,7 @@
             <CheckBox x:Name="chkboxIcone" Content="Afficher Icones systèmes sur le bureau" HorizontalAlignment="Left" Foreground="Azure" Margin="575,475,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
             <CheckBox x:Name="chkboxBitlocker" Content="Désactiver Bitlocker" HorizontalAlignment="Left" Foreground="Azure" Margin="225,475,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15" RenderTransformOrigin="3.218,0.669"/>
             <Label x:Name="Llbltitre_Copy" Content="Paramètres" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="135" Margin="404,312,0,0" FontSize="25"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
