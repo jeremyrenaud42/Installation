@@ -33,7 +33,7 @@
         <Grid x:Name="Window">
             <Label x:Name="lblProgress" Content="Initialisation" HorizontalAlignment="Center" VerticalAlignment="Top" Width="971" Height="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Consolas" FontSize="12" Background="#FF94120C" Margin="0,50,0,0" Foreground="#FFFBF0F0"/>
             <Border x:Name="richTxtBxOutputBorder" Background="#2b2d30" BorderThickness="2" BorderBrush="DarkRed" CornerRadius="8" Padding="10" Opacity="0.8" Width="681" Height="580" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="325,80,35,0"></Border>
-            <RichTextBox x:Name="richTxtBxOutput" HorizontalScrollBarVisibility="Auto" IsEnabled="False" Foreground="snow" FontStyle="Normal" FontWeight="DemiBold" VerticalScrollBarVisibility="Auto" Margin="330,85,40,35" BorderThickness="0" Background="Transparent">
+            <RichTextBox x:Name="richTxtBxOutput" HorizontalScrollBarVisibility="Auto" IsReadOnly="True" Foreground="snow" FontStyle="Normal" FontWeight="DemiBold" VerticalScrollBarVisibility="Auto" Margin="330,85,40,35" BorderThickness="0" Background="Transparent">
                 <FlowDocument>
                     <Paragraph>
                         <Run Text=""/>
