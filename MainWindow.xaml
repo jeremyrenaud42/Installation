@@ -17,7 +17,7 @@
             <Button x:Name="btnclose" Content="X" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="27" Background="Transparent"/>
         </Grid>
         <Grid x:Name="GridInstallationMenuAppChoice" Margin="0,40,0,0">
-            <Label x:Name="Llbltitre" Content="Cocher les applications à Install" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="390" Margin="326,10,0,0" FontSize="25"/>
+            <Label x:Name="Llbltitre" Content="Cocher les applications à Installer" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="390" Margin="326,10,0,0" FontSize="25"/>
             <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Foreground="Azure" Margin="200,46,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Foreground="Azure" Margin="415,46,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Foreground="Azure" Margin="663,46,0,0" VerticalAlignment="Top" FontSize="18"/>
