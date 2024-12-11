@@ -87,8 +87,8 @@
                 <CheckBox x:Name="chkboxIcone" Content="Afficher Icones sur bureau" HorizontalAlignment="Left" Foreground="Azure" Margin="400,460,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
                 <CheckBox x:Name="chkboxBitlocker" Content="Désactiver Bitlocker" HorizontalAlignment="Left" Foreground="Azure" Margin="150,460,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
                 <CheckBox x:Name="chkboxRemove" Content="Supprimer Stoolbox" HorizontalAlignment="Left" Foreground="Azure" Margin="400,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
-                <CheckBox x:Name="chkboxDeleteFolder" Content="Effacer Téléchargements" HorizontalAlignment="Left" Foreground="Azure" Margin="560,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15" Visibility="Hidden"/>
-                <CheckBox x:Name="chkboxDeleteBin" Content="Vider corbeille" HorizontalAlignment="Left" Foreground="Azure" Margin="750,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15" Visibility="Hidden"/>
+                <CheckBox x:Name="chkboxDeleteFolder" Content="Effacer Téléchargements" HorizontalAlignment="Left" Foreground="Azure" Margin="560,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxDeleteBin" Content="Vider corbeille" HorizontalAlignment="Left" Foreground="Azure" Margin="750,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
                 <Label x:Name="lblSettings" Content="Paramètres" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="135" Margin="400,310,0,0" FontSize="25"/>
                 <Button x:Name="btnWindowsUpdate" Content="Update" HorizontalAlignment="Left" Margin="675,370,0,0" VerticalAlignment="Top" FontSize="12"/>
                 <Button x:Name="btnDisque" Content="Rename" HorizontalAlignment="Left" Margin="600,400,0,0" VerticalAlignment="Top" FontSize="12"/>
