@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstallationWPFMainWindow"
-        WindowStyle="None"
         mc:Ignorable="d"
-        Title="Installation Windows" Height="688" Width="1041" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="C:/_Tech/Applications/Source/Images/Icone.ico">
+        Title="Installation Windows" WindowStyle="None" Height="688" Width="1041" WindowStartupLocation="CenterScreen" Icon="C:/_Tech/Applications/Source/Images/Icone.ico">
     <Grid x:Name="Main">
         <Grid x:Name="Background">
             <Image x:Name="PictureBoxBackGround" HorizontalAlignment="Center" Height="688" VerticalAlignment="Top" Width="1041" Source="C:/_Tech/Applications/Source/Images/Background_menu.jpeg"/>
@@ -24,7 +23,7 @@
             </Rectangle>
 
             <Button x:Name="btnclose" Content="X" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="25" Background="Transparent" Foreground ="Azure" BorderBrush="Transparent" FontWeight="Bold"/>
-            <Button x:Name="btnmin" Content="-" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="30" Background="Transparent" Foreground ="Azure" BorderBrush="Transparent" FontWeight="Bold"/>
+            <Button x:Name="btnmin" Content="-" Margin="0,0,50,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" FontSize="30" Background="Transparent" Foreground ="Azure" BorderBrush="Transparent" FontWeight="Bold"/>
 
             <Image x:Name="Logo" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Margin="4,4,0,0" Width="32" Source="C:/_Tech/Applications/Source/Images/Icone.ico"/>
             <Label x:Name="lblTitre" Content="Configuration du Windows" FontWeight="SemiBold" Foreground="Azure" FontSize="16" FontFamily="Arial" HorizontalAlignment="Left" Margin="50,6,0,0" VerticalAlignment="Top" Width="400"/>
