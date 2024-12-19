@@ -1,0 +1,115 @@
+﻿<Window x:Class="InstallationMenuAppChoice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InstallationMenuAppChoice"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        WindowStyle="None"
+        Title="Personnalisation de l'installation" Height="688" Width="1041">
+    <Grid x:Name="GridMain">
+        <Image x:Name="PictureBoxBackGround" Source="C:\_Tech\Applications\source\Images\Background_menu.jpeg" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Rectangle Fill="Black" Opacity="0.55" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid x:Name="GridToolbar" Margin="0,0,0,638">
+            <Rectangle x:Name="bar" Fill="DarkRed" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1041" Height="40"></Rectangle>
+            <Label x:Name="Llbltitre2" Content="Personnalisation de l'installation" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Margin="0,-10,0,0" FontSize="27"/>
+            <Button x:Name="btnclose" Content="X" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="27" Background="Transparent"/>
+        </Grid>
+        <Grid x:Name="GridInstallationMenuAppChoice" Margin="0,40,0,0">
+            <Label x:Name="Llbltitre" Content="Cocher les applications à Installer" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="390" Margin="326,10,0,0" FontSize="25"/>
+            <Label x:Name="lblbase" Content="Base" HorizontalAlignment="Left" Foreground="Azure" Margin="200,46,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="lblSystem" Content="Pilotes" HorizontalAlignment="Left" Foreground="Azure" Margin="415,46,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <Label x:Name="lblAutres" Content="Autres" HorizontalAlignment="Left" Foreground="Azure" Margin="663,46,0,0" VerticalAlignment="Top" FontSize="18"/>
+            <CheckBox x:Name="chkboxAdobe" Content="Adobe Reader" HorizontalAlignment="Left" Foreground="Azure" Margin="150,100,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxGoogleChrome" Content="Google Chrome" HorizontalAlignment="Left" Foreground="Azure" Margin="150,125,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+            <CheckBox x:Name="chkboxTeamviewer" Content="TeamViewer" HorizontalAlignment="Left" Foreground="Azure" Margin="150,150,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxVLC" Content="VLC" HorizontalAlignment="Left" Foreground="Azure" Margin="150,175,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkbox7zip" Content="7Zip" HorizontalAlignment="Left" Foreground="Azure" Margin="150,200,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxMacrium" Content="Macrium" HorizontalAlignment="Left" Foreground="Azure" Margin="150,225,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxGeForce" Content="GeForce Experience" HorizontalAlignment="Left" Foreground="Azure" Margin="375,100,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxLenovoVantage" Content="Lenovo Vantage" HorizontalAlignment="Left" Foreground="Azure" Margin="375,125,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxLenovoSystemUpdate" Content="Lenovo System Update" HorizontalAlignment="Left" Foreground="Azure" Margin="375,150,0,0" VerticalAlignment="Top"  IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxHPSA" Content="HP support Assistant" HorizontalAlignment="Left" Foreground="Azure" Margin="375,175,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxMSICenter" Content="MSI Center" HorizontalAlignment="Left" Foreground="Azure" Margin="375,200,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxMyAsus" Content="MyAsus" HorizontalAlignment="Left" Foreground="Azure" Margin="375,225,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxDellsa" Content="Dell Command Update" HorizontalAlignment="Left" Foreground="Azure" Margin="375,250,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxSteam" Content="Steam" HorizontalAlignment="Left" Foreground="Azure" Margin="675,100,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxZoom" Content="Zoom" HorizontalAlignment="Left" Foreground="Azure" Margin="675,125,0,0" VerticalAlignment="Top"  IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxDiscord" Content="Discord" HorizontalAlignment="Left" Foreground="Azure" Margin="675,150,0,0" VerticalAlignment="Top"  IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxFirefox" Content="Firefox" HorizontalAlignment="Left" Foreground="Azure" Margin="675,175,0,0" VerticalAlignment="Top"  IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxLibreOffice" Content="Libre Office" HorizontalAlignment="Left" Foreground="Azure" Margin="675,200,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <CheckBox x:Name="chkboxIntel" Content="Intel Drivers Support" HorizontalAlignment="Left" Foreground="Azure" Margin="375,278,0,0" VerticalAlignment="Top" IsChecked="False" FontSize="15"/>
+            <Button x:Name="btnGo" Content="Commencer" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="460,580,0,0" VerticalAlignment="Top" Height="36" Width="120" FontSize="18" FontWeight="Bold" IsDefault="True"/>
+            <Button x:Name="btnReturn" Content="Retour au Menu" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="320,580,0,0" VerticalAlignment="Top" Width="115"/>
+            <Button x:Name="btnQuit" Content="Quitter et supprimer" HorizontalAlignment="Left" Foreground="Azure" Background="DarkRed" Margin="600,580,185,0" VerticalAlignment="Top" Width="116"/>
+            <Button x:Name="btnAdobe" Content="Install" HorizontalAlignment="Left" Margin="285,100,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnGoogleChrome" Content="Install" HorizontalAlignment="Left" Margin="285,125,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnTeamviewer" Content="Install" HorizontalAlignment="Left" Margin="285,150,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnVLC" Content="Install" HorizontalAlignment="Left" Margin="285,175,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btn7zip" Content="Install" HorizontalAlignment="Left" Margin="285,200,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnMacrium" Content="Install" HorizontalAlignment="Left" Margin="285,225,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnGeForce" Content="Install" HorizontalAlignment="Left" Margin="555,100,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnLenovoVantage" Content="Install" HorizontalAlignment="Left" Margin="555,125,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnLenovoSystemUpdate" Content="Install" HorizontalAlignment="Left" Margin="555,150,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnHPSA" Content="Install" HorizontalAlignment="Left" Margin="555,175,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnMSICenter" Content="Install" HorizontalAlignment="Left" Margin="555,200,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnMyAsus" Content="Install" HorizontalAlignment="Left" Margin="555,225,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnDellsa" Content="Install" HorizontalAlignment="Left" Margin="555,250,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnIntel" Content="Install" HorizontalAlignment="Left" Margin="555,275,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnSteam" Content="Install" HorizontalAlignment="Left" Margin="790,100,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnZoom" Content="Install" HorizontalAlignment="Left" Margin="790,125,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnDiscord" Content="Install" HorizontalAlignment="Left" Margin="790,150,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnFirefox" Content="Install" HorizontalAlignment="Left" Margin="790,175,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Button x:Name="btnLibreOffice" Content="Install" HorizontalAlignment="Left" Margin="790,200,0,0" VerticalAlignment="Top" FontSize="12"/>
+            <Grid x:Name="GridSettings">
+                <CheckBox x:Name="chkboxDisque" Content="Renommer Disque" HorizontalAlignment="Left" Foreground="Azure" Margin="150,400,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <Label x:Name="lblDisk" Content="Nom :" HorizontalAlignment="Left" Foreground="Azure" Margin="325,395,0,0" VerticalAlignment="Top" FontSize="15"/>
+                <TextBox x:Name="TxtBkDiskName" MaxLength="32" HorizontalAlignment="Left" Foreground="Black" Margin="400,400,0,0" TextWrapping="Wrap" Text="OS" VerticalAlignment="Top" Width="157" Height="26" FontSize="16"/>
+                <CheckBox x:Name="chkboxWindowsUpdate" Content="Update Windows" HorizontalAlignment="Left" Foreground="Azure" Margin="150,370,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <Label x:Name="lblUpdateTimer" Content="Restart Timer (seconds)" HorizontalAlignment="Left" Foreground="Azure" Margin="475,370,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="CbBoxRestartTimer" HorizontalAlignment="Left" Margin="610,370,0,0" VerticalAlignment="Top" Width="60">
+                    <ComboBoxItem x:Name="CbBoxRestartTimer_1" Content = "60" />
+                    <ComboBoxItem x:Name="CbBoxRestartTimer_5" Content = "300" />
+                    <ComboBoxItem x:Name="CbBoxRestartTimer_15" Content = "900" />
+                </ComboBox>
+                <Label x:Name="lblUpdateSize" Content="Max size (mb)" HorizontalAlignment="Left" Foreground="Azure" Margin="325,370,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="CbBoxSize" HorizontalAlignment="Left" Margin="410,371,0,0" VerticalAlignment="Top" Width="60">
+                    <ComboBoxItem x:Name="CbBoxSize_250" Content = "250" />
+                    <ComboBoxItem x:Name="CbBoxSize_500" Content = "1000" />
+                    <ComboBoxItem x:Name="CbBoxSize_Aucune" Content = "9999" />
+                </ComboBox>
+                <CheckBox x:Name="chkboxMSStore" Content="Update MsStore" HorizontalAlignment="Left" Foreground="Azure" Margin="150,430,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxClavier" Content="Retirer clavier Anglais" HorizontalAlignment="Left" Foreground="Azure" Margin="150,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxConfi" Content="Améliorer Confidentialité" HorizontalAlignment="Left" Foreground="Azure" Margin="400,490,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxStartup" Content="Désactiver Fast startup" HorizontalAlignment="Left" Foreground="Azure" Margin="150,490,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxExplorer" Content="Configurer Explorer" HorizontalAlignment="Left" Foreground="Azure" Margin="400,430,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxIcone" Content="Afficher Icones sur bureau" HorizontalAlignment="Left" Foreground="Azure" Margin="400,460,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxBitlocker" Content="Désactiver Bitlocker" HorizontalAlignment="Left" Foreground="Azure" Margin="150,460,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxRemove" Content="Supprimer Stoolbox" HorizontalAlignment="Left" Foreground="Azure" Margin="400,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxDeleteFolder" Content="Effacer Téléchargements" HorizontalAlignment="Left" Foreground="Azure" Margin="560,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <CheckBox x:Name="chkboxDeleteBin" Content="Vider corbeille" HorizontalAlignment="Left" Foreground="Azure" Margin="750,520,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="15"/>
+                <Label x:Name="lblSettings" Content="Paramètres" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="135" Margin="400,310,0,0" FontSize="25"/>
+                <Button x:Name="btnWindowsUpdate" Content="Update" HorizontalAlignment="Left" Margin="675,370,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnDisque" Content="Rename" HorizontalAlignment="Left" Margin="600,400,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnMSStore" Content="Update" HorizontalAlignment="Left" Margin="325,430,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnBitlocker" Content="Desacti" HorizontalAlignment="Left" Margin="325,460,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnStartup" Content="Desacti" HorizontalAlignment="Left" Margin="325,490,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnClavier" Content="Desacti" HorizontalAlignment="Left" Margin="325,520,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnExplorer" Content="Config" HorizontalAlignment="Left" Margin="600,430,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnIcone" Content="Install" HorizontalAlignment="Left" Margin="600,460,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <Button x:Name="btnConfi" Content="Desacti" HorizontalAlignment="Left" Margin="600,490,0,0" VerticalAlignment="Top" FontSize="12"/>
+                <RichTextBox x:Name="richTextBxOutput" Margin="723,230,12,139" HorizontalScrollBarVisibility="Auto" IsReadOnly="True" VerticalScrollBarVisibility="Auto">
+                    <RichTextBox.OpacityMask>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </RichTextBox.OpacityMask>
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text=""/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
