@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstallationWPFMainWindow"
         mc:Ignorable="d"
-        Title="Installation Windows" WindowStyle="None" Height="688" Width="1041" WindowStartupLocation="CenterScreen" Icon="C:/_Tech/Applications/Source/Images/Icone.ico">
+        Title="Installation Windows" WindowStyle="None" Height="688" Width="1041" WindowStartupLocation="CenterScreen" Icon="C:/_Tech/Applications/Source/Images/Icone.ico" AllowsTransparency="True" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
     <Grid x:Name="Main">
         <Grid x:Name="Background">
             <Image x:Name="PictureBoxBackGround" HorizontalAlignment="Center" Height="688" VerticalAlignment="Top" Width="1041" Source="C:/_Tech/Applications/Source/Images/Background_menu.jpeg"/>

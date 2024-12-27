@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InstallationMenuAppChoice"
         mc:Ignorable="d"
-        ResizeMode="CanMinimize"
-        WindowStyle="None"
-        Title="Personnalisation de l'installation" Height="688" Width="1041">
+        WindowStyle="None" ResizeMode="CanMinimize" Title="Personnalisation de l'installation" Icon="C:/_Tech/Applications/Source/Images/Icone.ico" Height="688" Width="1041" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
     <Grid x:Name="GridMain">
         <Image x:Name="PictureBoxBackGround" Source="C:\_Tech\Applications\source\Images\Background_menu.jpeg" Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Rectangle Fill="Black" Opacity="0.55" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
@@ -15,6 +13,7 @@
             <Rectangle x:Name="bar" Fill="DarkRed" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1041" Height="40"></Rectangle>
             <Label x:Name="Llbltitre2" Content="Personnalisation de l'installation" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Margin="0,-10,0,0" FontSize="27"/>
             <Button x:Name="btnclose" Content="X" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="27" Background="Transparent"/>
+            <Image x:Name="imgLogo" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Margin="4,4,0,0" Width="32" Source="C:/_Tech/Applications/Source/Images/Icone.ico"/>
         </Grid>
         <Grid x:Name="GridInstallationMenuAppChoice" Margin="0,40,0,0">
             <Label x:Name="Llbltitre" Content="Cocher les applications à Installer" HorizontalAlignment="Left" Foreground="Azure" VerticalAlignment="Top" Width="390" Margin="326,10,0,0" FontSize="25"/>
