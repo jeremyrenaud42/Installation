@@ -16,7 +16,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
       "WingetName": "Google.Chrome",
       "ChocoName": "googlechrome",
-      "RemoteName": "$pathInstallation\\Source\\Ninite Chrome Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite Chrome Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Chrome Installer.exe"
     },
     "TeamViewer": {
@@ -26,7 +26,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\TeamViewer",
       "WingetName": "TeamViewer.TeamViewer",
       "ChocoName": "teamviewer",
-      "RemoteName": "$pathInstallation\\Source\\Ninite TeamViewer 15 Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite TeamViewer 15 Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite TeamViewer 15 Installer.exe"
     },
     "Lenovo Vantage": {
@@ -36,7 +36,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Packages\\E046963F.LenovoCompanion_k1h2ywk1493x8",
       "WingetName": "9WZDNCRFJ4MV",
       "ChocoName": null,
-      "RemoteName": "$pathInstallation\\Source\\Lenovo Vantage Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Lenovo Vantage Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Lenovo Vantage Installer.exe"
     },
     "Lenovo System Update": {
@@ -86,7 +86,7 @@
       "pathAppData": null,
       "WingetName": "XPDM1ZW6815MQM",
       "ChocoName": "vlc",
-      "RemoteName": "$pathInstallation\\Source\\Ninite VLC Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite VLC Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite VLC Installer.exe"
     },
     "7Zip": {
@@ -96,7 +96,7 @@
       "pathAppData": null,
       "WingetName": "7zip.7zip",
       "ChocoName": "7zip",
-      "RemoteName": "$pathInstallation\\Source\\Ninite 7Zip Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite 7Zip Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite 7Zip Installer.exe"
     },
     "Steam": {
@@ -106,7 +106,7 @@
       "pathAppData": null,
       "WingetName": "Valve.Steam",
       "ChocoName": "steam",
-      "RemoteName": "$pathInstallation\\Source\\Ninite Steam Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite Steam Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Steam Installer.exe"
     },
     "MyAsus": {
@@ -136,7 +136,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Roaming\\Zoom\\bin\\Zoom.exe",
       "WingetName": "XP99J3KP4XZ4VV",
       "ChocoName": "zoom",
-      "RemoteName": "$pathInstallation\\Source\\Ninite Zoom Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite Zoom Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Zoom Installer.exe"
     },
     "Discord": {
@@ -146,7 +146,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Discord",
       "WingetName": "Discord.Discord",
       "ChocoName": "discord",
-      "RemoteName": "$pathInstallation\\Source\\Ninite Discord Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite Discord Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Discord Installer.exe"
     },
     "Firefox": {
@@ -156,7 +156,7 @@
       "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Microsoft\\WindowsApps\\Mozilla.Firefox_n80bbvh6b1yt2",
       "WingetName": "9NZVDKPMR9RD",
       "ChocoName": "firefox",
-      "RemoteName": "$pathInstallation\\Source\\Ninite Firefox Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite Firefox Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite Firefox Installer.exe"
     },
     "Libre Office": {
@@ -166,7 +166,7 @@
       "pathAppData": null,
       "WingetName": "TheDocumentFoundation.LibreOffice",
       "ChocoName": "libreoffice-fresh",
-      "RemoteName": "$pathInstallation\\Source\\Ninite LibreOffice Installer.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\Ninite LibreOffice Installer.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Ninite LibreOffice Installer.exe"
     },
     "Intel Drivers Support": {
@@ -186,7 +186,7 @@
       "pathAppData": null,
       "WingetName": null,
       "ChocoName": "reflect-free",
-      "RemoteName": "$pathInstallation\\Source\\ReflectDLHF.exe",
+      "RemoteName": "$applicationPath\\installation\\Source\\ReflectDLHF.exe",
       "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/ReflectDLHF.exe"
     }
 }
