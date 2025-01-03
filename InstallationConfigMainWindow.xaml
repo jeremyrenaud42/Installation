@@ -13,6 +13,7 @@
             <Rectangle x:Name="bar" Fill="DarkRed" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1041" Height="40"></Rectangle>
             <Label x:Name="LblPerso" Content="Personnalisation de l'installation" HorizontalAlignment="Center" VerticalAlignment="Center" Width="450" Margin="0,-10,0,0" FontSize="27"/>
             <Button x:Name="btnClose_InstallationConfig" Content="X" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" IsCancel="True" FontSize="27" Background="Transparent"/>
+            <Button x:Name="btnMin_InstallationConfig" Content="-" Margin="0,0,60,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="60" Height="40" FontSize="30" Background="Transparent"/>
             <Image x:Name="imgLogo" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Margin="4,4,0,0" Width="32" Source="C:/_Tech/Applications/Source/Images/Icone.ico"/>
         </Grid>
         <Grid x:Name="gridInstallationConfig" Margin="0,40,0,0">
