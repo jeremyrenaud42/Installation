@@ -92,7 +92,7 @@
                 <CheckBox x:Name="chkboxRemove" Content="Supprimer Stoolbox" Style="{StaticResource InstallConfigCheckBoxStyle}" Margin="400,520,0,0" IsChecked="True"/>
                 <CheckBox x:Name="chkboxDeleteFolder" Content="Effacer Téléchargements" Style="{StaticResource InstallConfigCheckBoxStyle}" Margin="560,520,0,0" IsChecked="True"/>
                 <CheckBox x:Name="chkboxDeleteBin" Content="Vider corbeille" Style="{StaticResource InstallConfigCheckBoxStyle}" Margin="750,520,0,0" IsChecked="True"/>
-                <Label x:Name="lblSettings" Content="Paramètres" Foreground="Azure" VerticalAlignment="Top" Width="135" Margin="400,310,0,0" FontSize="25"/>
+                <Label x:Name="lblSettings" Content="Paramètres" Foreground="Azure" HorizontalAlignment="Left" VerticalAlignment="Top" Width="135" Margin="400,310,0,0" FontSize="25"/>
                 <Button x:Name="btnWindowsUpdate" Content="Update" Margin="675,370,0,0" Style="{StaticResource InstallConfigButtonStyle}"/>
                 <Button x:Name="btnDisque" Content="Rename" Margin="600,400,0,0" Style="{StaticResource InstallConfigButtonStyle}"/>
                 <Button x:Name="btnMSStore" Content="Update" Margin="325,430,0,0" Style="{StaticResource InstallConfigButtonStyle}"/>
