@@ -6,8 +6,8 @@
     "pathAppData": "$env:SystemDrive\\Users\\$env:username\\AppData\\Local\\Adobe\\Acrobat\\DC",
     "WingetName": "Adobe.Acrobat.Reader.64-bit",
     "ChocoName": "adobereader",
-    "RemoteName": "Reader_fr_install.exe",
-    "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Reader_fr_install.exe"
+    "RemoteName": "Adobe Acrobat Reader DC Installer",
+    "RemoteLink": "https://raw.githubusercontent.com/jeremyrenaud42/Installation/main/Ninite/Adobe Acrobat Reader DC Installer"
   },
     "Google Chrome": {
       "InstalledStatus": "0",
