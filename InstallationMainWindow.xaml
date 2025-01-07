@@ -40,9 +40,9 @@
                 </FlowDocument>
             </RichTextBox>
             <Border x:Name="StatusBorder" Background="#2b2d30" BorderThickness="2" BorderBrush="DarkRed" CornerRadius="8" Padding="10" Opacity="0.8" Width="280" Height="580" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="35,80,0,0"></Border>
-            <Label x:Name="lblWinget" Content="Installer Winget" HorizontalAlignment="Left" Margin="58,85,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
-            <Label x:Name="lblChoco" Content="Installer Chocolatey" HorizontalAlignment="Left" Margin="58,115,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
-            <Label x:Name="lblNuget" Content="Installer Nuget" HorizontalAlignment="Left" Margin="58,145,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
+            <Label x:Name="lblWinget" Content="Installer Winget" HorizontalAlignment="Left" Margin="58,85,0,0" VerticalAlignment="Top" Width="285" Foreground="White"/>
+            <Label x:Name="lblChoco" Content="Installer Chocolatey" HorizontalAlignment="Left" Margin="58,115,0,0" VerticalAlignment="Top" Width="285" Foreground="White"/>
+            <Label x:Name="lblNuget" Content="Installer Nuget" HorizontalAlignment="Left" Margin="58,145,0,0" VerticalAlignment="Top" Width="285" Foreground="White"/>
             <Label x:Name="lblStore" Content="Mettre à jour le Microsoft Store" HorizontalAlignment="Left" Margin="58,175,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
             <Label x:Name="lblDisk" Content="Renommer le disque" HorizontalAlignment="Left" Margin="58,205,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
             <Label x:Name="lblExplorer" Content="Configurer l'explorateur" HorizontalAlignment="Left" Margin="58,235,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
@@ -51,11 +51,11 @@
             <Label x:Name="lblkeyboard" Content="Supprimer le clavier Anglais" HorizontalAlignment="Left" Margin="58,325,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
             <Label x:Name="lblPrivacy" Content="Configurer les options de confidentialité" HorizontalAlignment="Left" Margin="58,355,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
             <Label x:Name="lblDesktopIcon" Content="Installer les icones système" HorizontalAlignment="Left" Margin="58,385,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
-            <Label x:Name="lblSoftware" Content="Installer les applications" HorizontalAlignment="Left" Margin="58,415,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
-            <Label x:Name="lblActivation" Content="Vérifier le statut d'activation du Windows" HorizontalAlignment="Left" Margin="58,445,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
+            <Label x:Name="lblSoftware" Content="Installer les applications" HorizontalAlignment="Left" Margin="58,415,0,0" VerticalAlignment="Top" Width="285" Foreground="White"/>
+            <Label x:Name="lblActivation" Content="Vérifier le statut d'activation du Windows" HorizontalAlignment="Left" Margin="58,445,0,0" VerticalAlignment="Top" Width="285" Foreground="White"/>
             <Label x:Name="lblStore2" Content="Mettre à jour le Microsoft Store #2" HorizontalAlignment="Left" Margin="58,475,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
             <Label x:Name="lblUpdate" Content="Mettre à jour Windows" HorizontalAlignment="Left" Margin="58,505,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
-            <Label x:Name="lblManualComplete" Content="Finaliser la configuration" HorizontalAlignment="Left" Margin="58,535,0,0" VerticalAlignment="Top" Width="285" Foreground="gray"/>
+            <Label x:Name="lblManualComplete" Content="Finaliser la configuration" HorizontalAlignment="Left" Margin="58,535,0,0" VerticalAlignment="Top" Width="285" Foreground="White"/>
             <Label x:Name="lblFree4" Content="Label" HorizontalAlignment="Left" Margin="58,565,0,0" VerticalAlignment="Top" Width="285" Visibility="Hidden" Foreground="gray"/>
             <Label x:Name="lblFree1" Content="Label" HorizontalAlignment="Left" Margin="58,595,0,0" VerticalAlignment="Top" Width="285" Visibility="Hidden" Foreground="gray"/>
             <Label x:Name="lblFree3" Content="Label" HorizontalAlignment="Left" Margin="58,625,0,0" VerticalAlignment="Top" Width="285" Visibility="Hidden" Foreground="gray"/>
