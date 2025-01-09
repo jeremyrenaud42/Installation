@@ -17,24 +17,12 @@ foreach ($property in $script:jsonChkboxContent.PSObject.Properties) {
 
     if ($null -ne $label) 
     {
-        Write-Host "Label $labelName found in the WPF window" -ForegroundColor Green
-
         if ($checkboxStatus -eq "1") 
         {
             $label.Foreground = 'White'
-            Write-Host "Label $labelName foreground updated to White" -ForegroundColor Green
         } 
-        else 
-        {
-            Write-Host "Label $labelName has status $checkboxStatus, no update needed" -ForegroundColor Yellow
-        }
     } 
-    else 
-    {
-        Write-Host "Label $labelName not found in the WPF window" -ForegroundColor Red
-    }
 }
-
 
 $formControlsMain.btnclose.Add_Click({
     $windowMain.Close()
@@ -53,50 +41,61 @@ $windowMain.add_Closed({
 })
 
 $formControlsMain.richTxtBxOutput.add_Textchanged({
-    $WindowMain.Dispatcher.Invoke([Windows.Threading.DispatcherPriority]::Background, [action]{}) #Refresh le Text
+    $windowMain.Dispatcher.Invoke([Windows.Threading.DispatcherPriority]::Background, [action]{}) #Refresh le Text
     $formControlsMain.richTxtBxOutput.ScrollToEnd() #scroll en bas
 })
 
 function Main
 {
+    $formControlsMain.lblProgress.content = "Préparation"
     Install-SoftwaresManager
     if ($script:jsonChkboxContent.chkboxMSStore.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Mises à jour du Microsoft Store"
         Update-MsStore
     }
     if ($script:jsonChkboxContent.chkboxDisque.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Renommage du disque"
         Rename-SystemDrive -NewDiskName $formControlsMenuApp.TxtBkDiskName.Text
     }
     if ($script:jsonChkboxContent.chkboxExplorer.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Configuration des paramètres de l'explorateur de fichiers"
         Set-ExplorerDisplay
     }
     if ($script:jsonChkboxContent.chkboxBitlocker.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Désactivation du bitlocker"
         Disable-Bitlocker
     }
     if ($script:jsonChkboxContent.chkboxStartup.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Desactivation du demarrage rapide"    
         Disable-FastBoot
     }
     if ($script:jsonChkboxContent.chkboxClavier.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Suppression du clavier $selectedLanguage"   
         Remove-EngKeyboard 'en-CA'
     }
     if ($script:jsonChkboxContent.chkboxConfi.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Paramètres de confidentialité"
         Set-Privacy
     }
     if ($script:jsonChkboxContent.chkboxIcone.status -eq 1)
     {
+        $formControlsMain.lblProgress.Content = "Installation des icones systèmes sur le bureau"   
         Enable-DesktopIcon  
     }
     Add-Text -Text "`n"
+    $formControlsMain.lblProgress.Content = "Installation des logiciels"
     Get-CheckBoxStatus
     Get-ActivationStatus
     if ($script:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
     { 
+        $formControlsMain.lblProgress.Content = "Mises à jour de Windows"
         Install-WindowsUpdate -UpdateSize $script:jsonChkboxContent.CbBoxSize.status
     }
     Complete-Installation

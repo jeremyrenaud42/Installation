@@ -1,5 +1,4 @@
-﻿#WPF - Main GUI
-$xamlFileMain = "$global:appPathSource\InstallationMainWindow.xaml"
+﻿$xamlFileMain = "$global:appPathSource\InstallationMainWindow.xaml"
 $xamlContentMain = Read-XamlFileContent $xamlFileMain
 $formatedXamlFileMain = Format-XamlFile $xamlContentMain
 $xamlDocMain = Convert-ToXmlDocument $formatedXamlFileMain
@@ -168,7 +167,6 @@ function Install-SoftwaresManager
 {
     New-Item -Path "$applicationPath\source\Installation.lock" -ItemType 'File' -Force
     Add-Log $global:logFileName "Installation de $windowsVersion $OSUpdate le $actualDate"
-    $formControlsMain.lblProgress.content = "Préparation"
     Clear-RichTextBox $global:sync["richTxtBxOutput"]
     Get-Winget
     Get-Choco
@@ -178,7 +176,6 @@ function Install-SoftwaresManager
 function Update-MsStore 
 {
     $formControlsMain.lbl_chkboxMSStore.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Mises à jour du Microsoft Store"
     #pour gérer les vieilles versions qui ne vont pas s'updaté
     $storeVersion = (Get-AppxPackage Microsoft.WindowsStore).version
     if ($storeVersion -le 22110)
@@ -228,7 +225,6 @@ Function Rename-SystemDrive
     )
     $formControlsMain.lbl_chkboxDisque.foreground = "DodgerBlue"
     $systemDriverLetter = $env:SystemDrive.TrimEnd(':') #Retourne la lettre seulement sans le :
-    $formControlsMain.lblProgress.Content = "Renommage du disque"
     $diskName = (Get-Volume -DriveLetter $systemDriverLetter).FileSystemLabel
     
     if($diskName -match $NewDiskName)
@@ -260,7 +256,6 @@ Function Rename-SystemDrive
 Function Set-ExplorerDisplay
 {
     $formControlsMain.lbl_chkboxExplorer.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Configuration des paramètres de l'explorateur de fichiers"
 
     $explorerLaunchWindow = (get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name 'LaunchTo').LaunchTo
     if($explorerLaunchWindow -eq '1')
@@ -318,7 +313,6 @@ Function Set-ExplorerDisplay
 Function Disable-Bitlocker
 {
     $formControlsMain.lbl_chkboxBitlocker.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Désactivation du bitlocker"
     $bitlockerStatus = Get-BitLockerVolume -MountPoint $env:SystemDrive | Select-Object -expand VolumeStatus
     if($bitlockerStatus -eq 'FullyEncrypted')
     {
@@ -358,7 +352,6 @@ Function Disable-Bitlocker
 Function Disable-FastBoot
 {
     $formControlsMain.lbl_chkboxStartup.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Desactivation du demarrage rapide"    
     $power = (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power" -Name 'HiberbootEnabled').HiberbootEnabled
     if($power -eq '0')
     {  
@@ -384,7 +377,6 @@ Function Disable-FastBoot
 Function Remove-EngKeyboard($selectedLanguage)
 {
     $formControlsMain.lbl_chkboxClavier.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Suppression du clavier $selectedLanguage"   
     $langList = Get-WinUserLanguageList #Gets the language list for the current user account
     $filteredUserLangList = $langList | Where-Object LanguageTag -eq $selectedLanguage #sélectionne le clavier anglais canada de la liste
     if(($filteredUserLangList).LanguageTag -eq $selectedLanguage)
@@ -416,7 +408,6 @@ Function Remove-EngKeyboard($selectedLanguage)
 Function Set-Privacy
 {
     $formControlsMain.lbl_chkboxConfi.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Paramètres de confidentialité"
 
     $338393 = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338393Enabled")."SubscribedContent-338393Enabled"
     $353694 = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353694Enabled")."SubscribedContent-353694Enabled"
@@ -457,7 +448,6 @@ Function Set-Privacy
 Function Enable-DesktopIcon
 {
     $formControlsMain.lbl_chkboxIcone.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Installation des icones systèmes sur le bureau"   
     if (!(Test-Path -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"))
 		{
 			New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Force
@@ -552,7 +542,6 @@ function Test-SoftwarePresence($appInfo)
 
 function Install-Software($appInfo)
 {
-    $formControlsMain.lblProgress.Content = "Installation de $softwareName"
     Add-Text -Text "Installation de $softwareName en cours"
     Add-Log $global:logFileName "Installation de $softwareName"
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
@@ -703,7 +692,6 @@ function Install-WindowsUpdate
 
 
     $formControlsMain.lbl_chkboxWindowsUpdate.foreground = "DodgerBlue"
-    $formControlsMain.lblProgress.Content = "Mises à jour de Windows"
     Add-Text -Text "Vérification des mises à jour de Windows"
     Initialize-WindowsUpdate 
     $maxSizeBytes = $UpdateSize * 1MB #sans ca ca marchera pas
