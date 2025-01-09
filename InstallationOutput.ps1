@@ -6,18 +6,6 @@ $XamlReaderMain = New-XamlReader $xamlDocMain
 $windowMain = New-WPFWindowFromXaml $XamlReaderMain
 $formControlsMain = Get-WPFControlsFromXaml $xamlDocMain $windowMain $sync
 
-$jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
-$jsonString = Get-Content -Raw $jsonAppsFilePath
-$appsInfo = ConvertFrom-Json $jsonString
-$appNames = $appsInfo.psobject.Properties.Name
-$appNames | ForEach-Object {
-    $softwareName = $_
-    $appsInfo.$softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path64)
-    $appsInfo.$softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path32)
-    $appsInfo.$softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.pathAppData)
-    $appsInfo.$softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.RemoteName)
-    }
-
 $script:jsonSettingsFilePath = "$global:appPathSource\InstallationSettings.JSON"
 $script:jsonChkboxContent = Get-Content -Raw $script:jsonSettingsFilePath | ConvertFrom-Json
 
@@ -35,18 +23,18 @@ foreach ($property in $script:jsonChkboxContent.PSObject.Properties) {
     }
 }
 
-$windowMain.add_Loaded({
-    $formControlsMain.btnclose.Add_Click({
-        $windowMain.Close()
-        Exit
+
+$formControlsMain.btnclose.Add_Click({
+    $windowMain.Close()
+    Exit
+})
+$formControlsMain.btnmin.Add_Click({
+        $windowMain.WindowState = [System.Windows.WindowState]::Minimized
     })
-    $formControlsMain.btnmin.Add_Click({
-            $windowMain.WindowState = [System.Windows.WindowState]::Minimized
-        })
-    $formControlsMain.Titlebar.Add_MouseDown({
-            $windowMain.DragMove()
-        })
-    })    
+$formControlsMain.Titlebar.Add_MouseDown({
+        $windowMain.DragMove()
+    })
+   
 $windowMain.add_Closed({
         Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\installation.lock" -Force 
         exit
