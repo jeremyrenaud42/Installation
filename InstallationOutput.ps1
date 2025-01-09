@@ -57,7 +57,7 @@ function Main
     if ($script:jsonChkboxContent.chkboxDisque.status -eq 1)
     { 
         $formControlsMain.lblProgress.Content = "Renommage du disque"
-        Rename-SystemDrive -NewDiskName $formControlsMenuApp.TxtBkDiskName.Text
+        Rename-SystemDrive -NewDiskName $script:jsonChkboxContent.DiskName.status
     }
     if ($script:jsonChkboxContent.chkboxExplorer.status -eq 1)
     { 
