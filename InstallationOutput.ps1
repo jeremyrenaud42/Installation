@@ -14,12 +14,24 @@ foreach ($property in $script:jsonChkboxContent.PSObject.Properties) {
     $checkboxStatus = $property.Value.Status
     $labelName = "lbl_$checkboxName"
     $label = $windowMain.FindName($labelName)
+
     if ($null -ne $label) 
     {
+        Write-Host "Label $labelName found in the WPF window" -ForegroundColor Green
+
         if ($checkboxStatus -eq "1") 
         {
             $label.Foreground = 'White'
+            Write-Host "Label $labelName foreground updated to White" -ForegroundColor Green
+        } 
+        else 
+        {
+            Write-Host "Label $labelName has status $checkboxStatus, no update needed" -ForegroundColor Yellow
         }
+    } 
+    else 
+    {
+        Write-Host "Label $labelName not found in the WPF window" -ForegroundColor Red
     }
 }
 
@@ -30,11 +42,11 @@ $formControlsMain.btnclose.Add_Click({
 })
 $formControlsMain.btnmin.Add_Click({
         $windowMain.WindowState = [System.Windows.WindowState]::Minimized
-    })
+})
 $formControlsMain.Titlebar.Add_MouseDown({
         $windowMain.DragMove()
-    })
-   
+})
+ 
 $windowMain.add_Closed({
         Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\installation.lock" -Force 
         exit
@@ -89,5 +101,7 @@ function Main
     }
     Complete-Installation
 }
+Read-Host "1"
 Start-WPFApp $windowMain
+Read-Host "2"
 Main
