@@ -101,7 +101,5 @@ function Main
     }
     Complete-Installation
 }
-Read-Host "1"
 Start-WPFApp $windowMain
-Read-Host "2"
 Main
