@@ -141,7 +141,7 @@ $formControls.btnGo_InstallationConfig.Add_Click({
     Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\Menu.lock" -Force 
     start-Process "$global:appPathSource\caffeine64.exe"
     $window.Close()
-    . $env:SystemDrive\_Tech\Applications\installation\source\InstallationMainOnlyTest.ps1
+    . $env:SystemDrive\_Tech\Applications\installation\source\InstallationOutput.ps1
 })
 
 $formControls.btnReturn_InstallationConfig.Add_Click({
