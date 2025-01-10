@@ -58,7 +58,6 @@ function script:Install-SoftwareMenuApp($global:softwareName)
         $global:appsInfo.$global:softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.pathAppData)
         $global:appsInfo.$global:softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.RemoteName)
     }
-
     Install-Software $global:appsInfo.$global:softwareName       
 } 
 
