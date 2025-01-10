@@ -102,31 +102,31 @@ $formControls.btnGo_InstallationConfig.Add_Click({
     if($formControls.chkboxDeleteFolder.IsChecked)
     {
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $global:jsonChkboxContent.RemoveDownloadFolder.Status = "1"
-        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $jsonGlobalSettinngsContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $jsonGlobalSettinngsContent.RemoveDownloadFolder.Status = "1"
+        $jsonGlobalSettinngsContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     elseif($formControls.chkboxDeleteFolder.IsChecked -eq $false)
     { 
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $global:jsonChkboxContent.RemoveDownloadFolder.Status = "0"
-        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $jsonGlobalSettinngsContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $jsonGlobalSettinngsContent.RemoveDownloadFolder.Status = "0"
+        $jsonGlobalSettinngsContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
 
     if($formControls.chkboxDeleteBin.IsChecked)
     {
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $global:jsonChkboxContent.EmptyRecycleBin.Status = "1"
-        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $jsonGlobalSettinngsContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $jsonGlobalSettinngsContent.EmptyRecycleBin.Status = "1"
+        $jsonGlobalSettinngsContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     elseif($formControls.chkboxDeleteBin.IsChecked -eq $false)
     { 
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $global:jsonChkboxContent.EmptyRecycleBin.Status = "0"
-        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $jsonGlobalSettinngsContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $jsonGlobalSettinngsContent.EmptyRecycleBin.Status = "0"
+        $jsonGlobalSettinngsContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\Menu.lock" -Force 
     $lockFile = "$sourceFolderPath\Installation.lock"
