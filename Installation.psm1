@@ -797,4 +797,5 @@ function Complete-Installation
         Invoke-Task -TaskName 'delete _tech' -ExecutedScript "$env:SystemDrive\Temp\Stoolbox\Remove.ps1"
     }
     $windowMain.Close()
+    exit
 }
