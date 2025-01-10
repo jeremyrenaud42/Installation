@@ -6,25 +6,25 @@ $global:XamlReaderMain = New-XamlReader $global:xamlDocMain
 $global:windowMain = New-WPFWindowFromXaml $global:XamlReaderMain
 $global:formControlsMain = Get-WPFControlsFromXaml $global:xamlDocMain $global:windowMain $sync
 
-$jsonString = Get-Content -Raw $global:jsonAppsFilePath
-$appsInfo = ConvertFrom-Json $jsonString
-$appNames = $appsInfo.psobject.Properties.Name
-$appNames | ForEach-Object {
-    $softwareName = $_
-    $appsInfo.$softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path64)
-    $appsInfo.$softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path32)
-    $appsInfo.$softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.pathAppData)
-    $appsInfo.$softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.RemoteName)
+$global:jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
+$global:jsonString = Get-Content -Raw $global:jsonAppsFilePath
+$global:appsInfo = ConvertFrom-Json $global:jsonString
+$global:appNames = $global:appsInfo.psobject.Properties.Name
+$global:appNames | ForEach-Object {
+    $global:softwareName = $_
+    $global:appsInfo.$global:softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path64)
+    $global:appsInfo.$global:softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path32)
+    $global:appsInfo.$global:softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.pathAppData)
+    $global:appsInfo.$global:softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.RemoteName)
     }
 
-function Update-InstallationStatus($softwareName) 
+function Update-InstallationStatus($global:softwareName) 
 {
-    $jsonString = Get-Content -Raw $global:jsonAppsFilePath
-    $appsInfo = ConvertFrom-Json $jsonString
-    if (Test-SoftwarePresence $appsInfo.$softwareName) 
+    $global:appsInfo = ConvertFrom-Json $global:jsonString
+    if (Test-SoftwarePresence $global:appsInfo.$global:softwareName) 
     {
-        $appsInfo.$softwareName.InstalledStatus = "1"
-        $appsInfo | ConvertTo-Json | Set-Content $global:jsonAppsFilePath
+        $global:appsInfo.$global:softwareName.InstalledStatus = "1"
+        $global:appsInfo | ConvertTo-Json | Set-Content $global:jsonAppsFilePath
     }
 }
 
@@ -514,8 +514,8 @@ function Get-CheckBoxStatus
         # If the status is 1, consider it as checked (or take action as needed)
         if ($checkboxStatus -eq 1) 
         {
-            $softwareName = "$($checkbox.Content)"
-            Install-Software $appsInfo.$softwareName
+            $global:softwareName = "$($checkbox.Content)"
+            Install-Software $global:appsInfo.$global:softwareName
         } 
     }
 
@@ -547,13 +547,14 @@ function Test-SoftwarePresence($appInfo)
 
 function Install-Software($appInfo)
 {
-    Add-Text -Text "Installation de $softwareName en cours"
-    Add-Log $global:logFileName "Installation de $softwareName"
+    Add-Text -Text "Installation de $global:softwareName en cours"
+    $window.Dispatcher.Invoke([Windows.Threading.DispatcherPriority]::Background, [action]{}) #Refresh le Text
+    Add-Log $global:logFileName "Installation de $global:softwareName"
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
         if($softwareInstallationStatus)
         {
-            Add-Text -Text "- $softwareName est déja installé" -SameLine
-            Add-Log $global:logFileName "- $softwareName est déja installé"
+            Add-Text -Text "- $global:softwareName est déja installé" -SameLine
+            Add-Log $global:logFileName "- $global:softwareName est déja installé"
         }
         elseif($softwareInstallationStatus -eq $false)
         {  
@@ -570,9 +571,9 @@ function Install-SoftwareWithWinget($appInfo)
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
         if($softwareInstallationStatus)
         {
-            Add-Text -Text " - $softwareName installé avec succès" -SameLine
-            Add-Log $global:logFileName " - $softwareName installé avec succès"
-            Update-InstallationStatus $softwareName
+            Add-Text -Text " - $global:softwareName installé avec succès" -SameLine
+            Add-Log $global:logFileName " - $global:softwareName installé avec succès"
+            Update-InstallationStatus $global:softwareName
         } 
         else
         {
@@ -589,9 +590,9 @@ function Install-SoftwareWithChoco($appInfo)
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
     if($softwareInstallationStatus)
     {     
-        Add-Text -Text " - $softwareName installé avec succès" -SameLine
-        Add-Log $global:logFileName " - $softwareName installé avec succès"
-        Update-InstallationStatus $softwareName
+        Add-Text -Text " - $global:softwareName installé avec succès" -SameLine
+        Add-Log $global:logFileName " - $global:softwareName installé avec succès"
+        Update-InstallationStatus $global:softwareName
     }
     else
     {
@@ -609,14 +610,14 @@ function Install-SoftwareWithNinite($appInfo)
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
     if($softwareInstallationStatus)
     {     
-        Add-Text -Text " - $softwareName installé avec succès" -SameLine
-        Add-Log $global:logFileName " - $softwareName installé avec succès"
-        Update-InstallationStatus $softwareName
+        Add-Text -Text " - $global:softwareName installé avec succès" -SameLine
+        Add-Log $global:logFileName " - $global:softwareName installé avec succès"
+        Update-InstallationStatus $global:softwareName
     }
     else
     {
-        Add-Text -Text " - $softwareName a échoué" -colorName "red" -SameLine
-        Add-Log $global:logFileName " - $softwareName a échoué"
+        Add-Text -Text " - $global:softwareName a échoué" -colorName "red" -SameLine
+        Add-Log $global:logFileName " - $global:softwareName a échoué"
         $Global:failStatus = $true
     } 
 }

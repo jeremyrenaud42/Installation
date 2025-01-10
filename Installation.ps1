@@ -1,7 +1,6 @@
 ﻿Import-Module "$applicationPath\installation\source\Installation.psm1"
 $global:jsonSettingsFilePath = "$global:appPathSource\InstallationSettings.JSON"
 $global:jsonChkboxContent = Get-Content -Raw $global:jsonSettingsFilePath | ConvertFrom-Json
-$global:jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
 
 function script:Update-CheckboxStatus
 {
@@ -50,38 +49,17 @@ function script:Update-CheckboxStatus
 
     $global:jsonChkboxContent | ConvertTo-Json -Depth 10 | Set-Content $global:jsonSettingsFilePath
 }
-function script:Install-SoftwareMenuApp($softwareName)
+function script:Install-SoftwareMenuApp($global:softwareName)
 {
-    $global:jsonAppsFilePath = "$applicationPath\installation\source\InstallationApps.JSON"
-    $jsonString = Get-Content -Raw $global:jsonAppsFilePath
-    $appsInfo = ConvertFrom-Json $jsonString
-    $appNames = $appsInfo.psobject.Properties.Name
-    if ($appNames -contains $softwareName) 
+    if ($global:appNames -contains $global:softwareName) 
     {
-        $appsInfo.$softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path64)
-        $appsInfo.$softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path32)
-        $appsInfo.$softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.pathAppData)
-        $appsInfo.$softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.RemoteName)
+        $global:appsInfo.$global:softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path64)
+        $global:appsInfo.$global:softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path32)
+        $global:appsInfo.$global:softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.pathAppData)
+        $global:appsInfo.$global:softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.RemoteName)
     }
 
-    $status = Test-SoftwarePresence $appsInfo.$softwareName
-    if ($status) 
-    {
-        $formControls.rtbOutput_InstallationConfig.AppendText("$softwareName est déja installé`r")
-    }
-    else 
-    {
-        Install-Software $appsInfo.$softwareName
-        $status = Test-SoftwarePresence $appsInfo.$softwareName
-        if ($status) 
-        {
-            $formControls.rtbOutput_InstallationConfig.AppendText("$softwareName a été installé`r")
-        }
-        else 
-        {
-            $formControls.rtbOutput_InstallationConfig.AppendText("$softwareName n'a pas été installé`r")
-        }   
-    }      
+    Install-Software $global:appsInfo.$global:softwareName       
 } 
 
 #Logiciels à cocher automatiquement
