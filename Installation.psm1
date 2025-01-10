@@ -1,10 +1,10 @@
-﻿$xamlFileMain = "$global:appPathSource\InstallationMainWindow.xaml"
-$xamlContentMain = Read-XamlFileContent $xamlFileMain
-$formatedXamlFileMain = Format-XamlFile $xamlContentMain
-$xamlDocMain = Convert-ToXmlDocument $formatedXamlFileMain
-$XamlReaderMain = New-XamlReader $xamlDocMain
-$windowMain = New-WPFWindowFromXaml $XamlReaderMain
-$formControlsMain = Get-WPFControlsFromXaml $xamlDocMain $windowMain $sync
+﻿$global:xamlFileMain = "$global:appPathSource\InstallationMainWindow.xaml"
+$global:xamlContentMain = Read-XamlFileContent $global:xamlFileMain
+$global:formatedXamlFileMain = Format-XamlFile $global:xamlContentMain
+$global:xamlDocMain = Convert-ToXmlDocument $global:formatedXamlFileMain
+$global:XamlReaderMain = New-XamlReader $global:xamlDocMain
+$global:windowMain = New-WPFWindowFromXaml $global:XamlReaderMain
+$global:formControlsMain = Get-WPFControlsFromXaml $global:xamlDocMain $global:windowMain $sync
 
 $jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
 $jsonString = Get-Content -Raw $jsonAppsFilePath
@@ -75,7 +75,7 @@ function Add-Text
 
 function Get-Winget
 {
-    $formControlsMain.lblWinget.foreground = "DodgerBlue"
+    $global:formControlsMain.lblWinget.foreground = "DodgerBlue"
     $wingetStatus = Get-WingetStatus
     Add-Text -Text "Installation de Winget"
     if($wingetStatus -le '1.8')
@@ -86,26 +86,26 @@ function Get-Winget
         {
             Add-Log $global:logFileName " - Winget a été installé"
             Add-Text -Text " - Winget a été installé" -SameLine
-            $formControlsMain.lblWinget.foreground = "MediumSeaGreen"
+            $global:formControlsMain.lblWinget.foreground = "MediumSeaGreen"
         }
         else 
         {
             Add-Log $global:logFileName " - Winget a échoué"
             Add-Text -Text " - Winget a échoué" -colorName "red" -SameLine
-            $formControlsMain.lblWinget.foreground = "red"
+            $global:formControlsMain.lblWinget.foreground = "red"
         }
     }
     else 
     {
         Add-Log $global:logFileName " - Winget est déja installé"
         Add-Text -Text " - Winget est déja installé" -SameLine
-        $formControlsMain.lblWinget.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lblWinget.foreground = "MediumSeaGreen"
     }
 }
 
 function Get-Choco
 {
-    $formControlsMain.lblChoco.foreground = "DodgerBlue"
+    $global:formControlsMain.lblChoco.foreground = "DodgerBlue"
     $chocostatus = Get-ChocoStatus
     Add-Text -Text "Installation de Chocolatey"
     if($chocostatus -eq $false)
@@ -116,25 +116,25 @@ function Get-Choco
         {
             Add-Log $global:logFileName " - Chocolatey a été installé"
             Add-Text -Text " - Chocolatey a été installé" -SameLine
-            $formControlsMain.lblChoco.foreground = "MediumSeaGreen"
+            $global:formControlsMain.lblChoco.foreground = "MediumSeaGreen"
         }
         else 
         {
             Add-Log $global:logFileName " - Chocolatey a échoué"
             Add-Text -Text " - Chocolatey a échoué" -colorName "red" -SameLine
-            $formControlsMain.lblChoco.foreground = "red"
+            $global:formControlsMain.lblChoco.foreground = "red"
         }
     }
     else 
     {
         Add-Log $global:logFileName " - Chocolatey  est déja installé"
         Add-Text -Text " - Chocolatey est déja installé" -SameLine 
-        $formControlsMain.lblChoco.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lblChoco.foreground = "MediumSeaGreen"
     }
 }
 function Get-Nuget
 {
-    $formControlsMain.lblNuget.foreground = "DodgerBlue"
+    $global:formControlsMain.lblNuget.foreground = "DodgerBlue"
     $nugetExist = Get-NugetStatus
     Add-Text -Text "Installation de NuGet"
     if($nugetExist -eq $false)
@@ -145,26 +145,27 @@ function Get-Nuget
         {
             Add-Log $global:logFileName " - Nuget a été installé"
             Add-Text -Text " - Nuget a été installé" -SameLine
-            $formControlsMain.lblNuget.foreground = "MediumSeaGreen"
+            $global:formControlsMain.lblNuget.foreground = "MediumSeaGreen"
         }
         else 
         {
             Add-Log $global:logFileName " - Nuget a échoué"
             Add-Text -Text " - Nuget a échoué" -colorName = "red" -SameLine
-            $formControlsMain.lblNuget.foreground = "red"
+            $global:formControlsMain.lblNuget.foreground = "red"
         }
     }
     else 
     {   
         Add-Log $global:logFileName " - Nuget est déja installé" 
         Add-Text -Text " - Nuget est déja installé" -SameLine
-        $formControlsMain.lblNuget.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lblNuget.foreground = "MediumSeaGreen"
     }
     Add-Text -Text "`n"
 }
 
 function Install-SoftwaresManager
 {
+    $global:formControlsMain.lblProgress.content = "Préparation"
     New-Item -Path "$applicationPath\source\Installation.lock" -ItemType 'File' -Force
     Add-Log $global:logFileName "Installation de $windowsVersion $OSUpdate le $actualDate"
     Clear-RichTextBox $global:sync["richTxtBxOutput"]
@@ -175,7 +176,8 @@ function Install-SoftwaresManager
 
 function Update-MsStore 
 {
-    $formControlsMain.lbl_chkboxMSStore.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Mises à jour du Microsoft Store"
+    $global:formControlsMain.lbl_chkboxMSStore.foreground = "DodgerBlue"
     #pour gérer les vieilles versions qui ne vont pas s'updaté
     $storeVersion = (Get-AppxPackage Microsoft.WindowsStore).version
     if ($storeVersion -le 22110)
@@ -191,14 +193,14 @@ function Update-MsStore
     if ($result.ReturnValue -eq 0) 
     {
         Add-Text -Text " - Mises à jour du Microsoft Store lancées" -SameLine
-        $formControlsMain.lbl_chkboxMSStore.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxMSStore.foreground = "MediumSeaGreen"
         Add-Log $global:logFileName "Mises à jour de Microsoft Store lancées" 
     } 
     else 
     {
         Add-Log $global:logFileName " - Échec des mises à jour du Microsoft Store" 
         Add-Text -Text " - Échec des mises à jour du Microsoft Store" -colorName "red" -SameLine
-        $formControlsMain.lbl_chkboxMSStore.foreground = "red"
+        $global:formControlsMain.lbl_chkboxMSStore.foreground = "red"
     }
 }
 
@@ -223,13 +225,14 @@ Function Rename-SystemDrive
     (
         [string]$NewDiskName = "OS"
     )
-    $formControlsMain.lbl_chkboxDisque.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Renommage du disque"
+    $global:formControlsMain.lbl_chkboxDisque.foreground = "DodgerBlue"
     $systemDriverLetter = $env:SystemDrive.TrimEnd(':') #Retourne la lettre seulement sans le :
     $diskName = (Get-Volume -DriveLetter $systemDriverLetter).FileSystemLabel
     
     if($diskName -match $NewDiskName)
     {
-        $formControlsMain.lbl_chkboxDisque.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxDisque.foreground = "MediumSeaGreen"
         Add-Log $global:logFileName "Le disque est déja nommé $NewDiskName"
         Add-Text -Text "Le disque est déja nommé $NewDiskName"
     }
@@ -240,7 +243,7 @@ Function Rename-SystemDrive
 
         if($diskName -match $NewDiskName)
         {
-            $formControlsMain.lbl_chkboxDisque.foreground = "MediumSeaGreen"
+            $global:formControlsMain.lbl_chkboxDisque.foreground = "MediumSeaGreen"
             Add-Text -Text "Le disque $env:SystemDrive a été renommé $NewDiskName" 
             Add-Log $global:logFileName "Le disque $env:SystemDrive a été renommé $NewDiskName"
         }
@@ -248,14 +251,15 @@ Function Rename-SystemDrive
         {
             Add-Text -Text "Échec du renommage de disque" -colorName "red"
             Add-Log $global:logFileName "Échec du renommage de disque"
-            $formControlsMain.lbl_chkboxDisque.foreground = "red"
+            $global:formControlsMain.lbl_chkboxDisque.foreground = "red"
         }
     } 
 }
 
 Function Set-ExplorerDisplay
 {
-    $formControlsMain.lbl_chkboxExplorer.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Configuration des paramètres de l'explorateur de fichiers"
+    $global:formControlsMain.lbl_chkboxExplorer.foreground = "DodgerBlue"
 
     $explorerLaunchWindow = (get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name 'LaunchTo').LaunchTo
     if($explorerLaunchWindow -eq '1')
@@ -302,48 +306,49 @@ Function Set-ExplorerDisplay
     }
     if(($explorerLaunchWindow -eq '1') -and ($providerNotifications -eq '0'))
     {
-        $formControlsMain.lbl_chkboxExplorer.foreground = "MediumSeaGreen"   
+        $global:formControlsMain.lbl_chkboxExplorer.foreground = "MediumSeaGreen"   
     }
     else 
     {
-        $formControlsMain.lbl_chkboxExplorer.foreground = "red"     
+        $global:formControlsMain.lbl_chkboxExplorer.foreground = "red"     
     }
 }
 
 Function Disable-Bitlocker
 {
-    $formControlsMain.lbl_chkboxBitlocker.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Désactivation du bitlocker"
+    $global:formControlsMain.lbl_chkboxBitlocker.foreground = "DodgerBlue"
     $bitlockerStatus = Get-BitLockerVolume -MountPoint $env:SystemDrive | Select-Object -expand VolumeStatus
     if($bitlockerStatus -eq 'FullyEncrypted')
     {
         manage-bde $env:systemdrive -off
-        $formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
         Add-Text -Text "Bitlocker a été désactivé"
         Add-Log $global:logFileName "Bitlocker a été désactivé"
     }
     elseif ($bitlockerStatus -eq 'EncryptionInProgress')
     {
         manage-bde $env:systemdrive -off
-        $formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
         Add-Text -Text "Bitlocker a été désactivé"
         Add-Log $global:logFileName "Bitlocker a été désactivé"
     }
     elseif ($bitlockerStatus -eq 'FullyDecrypted')
     {
-        $formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
         Add-Text -Text "Bitlocker est déja désactivé"
 
         Add-Log $global:logFileName "Bitlocker est déja désactivé"
     }
     elseif ($bitlockerStatus -eq 'DecryptionInProgress')
     {
-        $formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxBitlocker.foreground = "MediumSeaGreen"
         Add-Text -Text "Bitlocker est déja en cours de déchiffrement" 
         Add-Log $global:logFileName "Bitlocker est déja en cours de déchiffrement"
     }
     else 
     {
-        $formControlsMain.lbl_chkboxBitlocker.foreground = "red"
+        $global:formControlsMain.lbl_chkboxBitlocker.foreground = "red"
         Add-Text -Text "Bitlocker a échoué" -colorName "red"
         Add-Log $global:logFileName "Bitlocker a échoué"
     }
@@ -351,32 +356,34 @@ Function Disable-Bitlocker
 
 Function Disable-FastBoot
 {
-    $formControlsMain.lbl_chkboxStartup.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Desactivation du demarrage rapide"    
+    $global:formControlsMain.lbl_chkboxStartup.foreground = "DodgerBlue"
     $power = (Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power" -Name 'HiberbootEnabled').HiberbootEnabled
     if($power -eq '0')
     {  
         Add-Text -Text "Le démarrage rapide est déjà désactivé"
         Add-Log $global:logFileName "Le démarrage rapide est déjà désactivé"
-        $formControlsMain.lbl_chkboxStartup.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxStartup.foreground = "MediumSeaGreen"
     }
     elseif($power -eq '1')
     {
         set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Power" -Name 'HiberbootEnabled' -Type 'DWord' -Value '0'  
         Add-Text -Text "Le démarrage rapide a été désactivé"
         Add-Log $global:logFileName "Le démarrage rapide a été désactivé"
-        $formControlsMain.lbl_chkboxStartup.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxStartup.foreground = "MediumSeaGreen"
     }
     else  
     {
         Add-Text -Text "Le démarrage rapide n'a pas été désactivé" -colorName "red"
         Add-Log $global:logFileName "Le démarrage rapide n'a pas été désactivé"
-        $formControlsMain.lbl_chkboxStartup.foreground = "red"
+        $global:formControlsMain.lbl_chkboxStartup.foreground = "red"
     }
 }
 
 Function Remove-EngKeyboard($selectedLanguage)
 {
-    $formControlsMain.lbl_chkboxClavier.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Suppression du clavier $selectedLanguage"   
+    $global:formControlsMain.lbl_chkboxClavier.foreground = "DodgerBlue"
     $langList = Get-WinUserLanguageList #Gets the language list for the current user account
     $filteredUserLangList = $langList | Where-Object LanguageTag -eq $selectedLanguage #sélectionne le clavier anglais canada de la liste
     if(($filteredUserLangList).LanguageTag -eq $selectedLanguage)
@@ -388,12 +395,12 @@ Function Remove-EngKeyboard($selectedLanguage)
         {
             Add-Text -Text "Le clavier $selectedLanguage n'a pas été supprimé" -colorName "red"
             Add-Log $global:logFileName "Le clavier $selectedLanguage n'a pas été supprimé"
-            $formControlsMain.lbl_chkboxClavier.foreground = "red"
+            $global:formControlsMain.lbl_chkboxClavier.foreground = "red"
         }
         else
         {
             Add-Text -Text "Le clavier $selectedLanguage a été supprimé"
-            $formControlsMain.lbl_chkboxClavier.foreground = "MediumSeaGreen"
+            $global:formControlsMain.lbl_chkboxClavier.foreground = "MediumSeaGreen"
             Add-Log $global:logFileName "Le clavier $selectedLanguage a été supprimé"
         }
     }
@@ -401,13 +408,14 @@ Function Remove-EngKeyboard($selectedLanguage)
     {
         Add-Text -Text "Le clavier $selectedLanguage est déja supprimé"
         Add-Log $global:logFileName "Le clavier $selectedLanguage est déja supprimé"
-        $formControlsMain.lbl_chkboxClavier.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxClavier.foreground = "MediumSeaGreen"
     }   
 }
 
 Function Set-Privacy
 {
-    $formControlsMain.lbl_chkboxConfi.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Paramètres de confidentialité"
+    $global:formControlsMain.lbl_chkboxConfi.foreground = "DodgerBlue"
 
     $338393 = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338393Enabled")."SubscribedContent-338393Enabled"
     $353694 = (Get-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353694Enabled")."SubscribedContent-353694Enabled"
@@ -417,7 +425,7 @@ Function Set-Privacy
     {
         Add-Text -Text "Les options de confidentialité sont déjà configurées"
         Add-Log $global:logFileName "Les options de confidentialité sont déjà configurées"
-        $formControlsMain.lbl_chkboxConfi.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxConfi.foreground = "MediumSeaGreen"
     }
     else 
     {
@@ -434,11 +442,11 @@ Function Set-Privacy
         { 
             Add-Text -Text "Les options de confidentialité ont été configurées"
             Add-Log $global:logFileName "Les options de confidentialité ont été configurées"
-            $formControlsMain.lbl_chkboxConfi.foreground = "MediumSeaGreen" 
+            $global:formControlsMain.lbl_chkboxConfi.foreground = "MediumSeaGreen" 
         }
         else 
         {
-            $formControlsMain.lbl_chkboxConfi.foreground = "red" 
+            $global:formControlsMain.lbl_chkboxConfi.foreground = "red" 
             Add-Text -Text "Les options de confidentialité n'ont pas été configurées" -colorName "red"
             Add-Log $global:logFileName "Les options de confidentialité n'ont pas été configurées"
         } 
@@ -447,7 +455,8 @@ Function Set-Privacy
 
 Function Enable-DesktopIcon
 {
-    $formControlsMain.lbl_chkboxIcone.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Installation des icones systèmes sur le bureau"  
+    $global:formControlsMain.lbl_chkboxIcone.foreground = "DodgerBlue"
     if (!(Test-Path -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"))
 		{
 			New-Item -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Force
@@ -461,7 +470,7 @@ Function Enable-DesktopIcon
     {
         Add-Text -Text "Les icones systèmes sont déjà installés sur le bureau"
         Add-Log $global:logFileName "Les icones systèmes sont déjà installés sur le bureau"
-        $formControlsMain.lbl_chkboxIcone.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lbl_chkboxIcone.foreground = "MediumSeaGreen"
     }
     else 
     {
@@ -476,13 +485,13 @@ Function Enable-DesktopIcon
         {
             Add-Text -Text "Les icones systèmes ont été installés sur le bureau"
             Add-Log $global:logFileName "Les icones systèmes ont été installés sur le bureau"
-            $formControlsMain.lbl_chkboxIcone.foreground = "MediumSeaGreen"  
+            $global:formControlsMain.lbl_chkboxIcone.foreground = "MediumSeaGreen"  
         }
         else 
         {
             Add-Text -Text "Les icones systèmes n'ont pas été installés sur le bureau" -colorName "red"
             Add-Log $global:logFileName "Les icones systèmes n'ont pas été installés sur le bureau"
-            $formControlsMain.lbl_chkboxIcone.foreground = "red"
+            $global:formControlsMain.lbl_chkboxIcone.foreground = "red"
         }
     }  
 }
@@ -491,7 +500,8 @@ Function Enable-DesktopIcon
 function Get-CheckBoxStatus 
 {
     $Global:failStatus = $false
-    $formControlsMain.lblSoftware.foreground = "DodgerBlue"
+    $global:formControlsMain.lblProgress.Content = "Installation des logiciels"
+    $global:formControlsMain.lblSoftware.foreground = "DodgerBlue"
     
     $checkboxes = $formControls.gridInstallationConfig.Children |
     Where-Object { 
@@ -516,15 +526,15 @@ function Get-CheckBoxStatus
 
     if($Global:failStatus -eq $true)
     {
-        $formControlsMain.lblSoftware.foreground = "red"
+        $global:formControlsMain.lblSoftware.foreground = "red"
     }
     elseif ($Global:failStatus -eq $false) 
     {
-        $formControlsMain.lblSoftware.foreground = "MediumSeaGreen"
+        $global:formControlsMain.lblSoftware.foreground = "MediumSeaGreen"
     }
     else
     {
-        $formControlsMain.lblSoftware.foreground = "red"
+        $global:formControlsMain.lblSoftware.foreground = "red"
     }
 }
 
@@ -618,21 +628,21 @@ function Install-SoftwareWithNinite($appInfo)
 
 function Get-ActivationStatus
 {
-    $formControlsMain.lblActivation.foreground = "DodgerBlue"
+    $global:formControlsMain.lblActivation.foreground = "DodgerBlue"
     $activated = Get-CIMInstance -query "select LicenseStatus from SoftwareLicensingProduct where LicenseStatus=1" | Select-Object -ExpandProperty LicenseStatus 
     Add-Text -Text "`n"
     if($activated -eq "1")
     {
         Add-Text -Text "$windowsVersion est activé sur cet ordinateur"
         Add-Log $global:logFileName "$windowsVersion est activé sur cet ordinateur"
-        $formControlsMain.lblActivation.foreground = "MediumSeaGreen"      
+        $global:formControlsMain.lblActivation.foreground = "MediumSeaGreen"      
     }
     else 
     {  
         Add-Text -Text "Windows n'est pas activé" -colorName "red"
         Add-Log $global:logFileName "Windows n'est pas activé"
         [System.Windows.MessageBox]::Show("Windows n'est pas activé","Installation Windows",0,64)   
-        $formControlsMain.lblActivation.foreground = "red"
+        $global:formControlsMain.lblActivation.foreground = "red"
     }  
 }
 
@@ -690,8 +700,9 @@ function Install-WindowsUpdate
         [int]$UpdateSize = 250
     )
 
-
-    $formControlsMain.lbl_chkboxWindowsUpdate.foreground = "DodgerBlue"
+    
+    $global:formControlsMain.lblProgress.Content = "Mises à jour de Windows"
+    $global:formControlsMain.lbl_chkboxWindowsUpdate.foreground = "DodgerBlue"
     Add-Text -Text "Vérification des mises à jour de Windows"
     Initialize-WindowsUpdate 
     $maxSizeBytes = $UpdateSize * 1MB #sans ca ca marchera pas
@@ -701,7 +712,7 @@ function Install-WindowsUpdate
         {
             Add-Text -Text " - Toutes les mises à jour sont deja installées" -SameLine 
             Add-Log $global:logFileName " - Toutes les mises à jour sont deja installées"
-            $formControlsMain.lbl_chkboxWindowsUpdate.foreground = "MediumSeaGreen"   
+            $global:formControlsMain.lbl_chkboxWindowsUpdate.foreground = "MediumSeaGreen"   
         }
         elseif($totalUpdates -gt 0)
         {
@@ -716,13 +727,13 @@ function Install-WindowsUpdate
                     Add-Log $global:logFileName "Mise à jour $($currentUpdate) sur $($totalUpdates): $($update.Title)"
                     Get-WindowsUpdate -KBArticleID $kb -MaxSize $maxSizeBytes -Install -AcceptAll -IgnoreReboot     
                 }
-                $formControlsMain.lbl_chkboxWindowsUpdate.foreground = "MediumSeaGreen"
+                $global:formControlsMain.lbl_chkboxWindowsUpdate.foreground = "MediumSeaGreen"
         }  
         else
         {
             Add-Text -Text " - Échec de la vérification des mise a jours de Windows" -colorName "red" -SameLine
             Add-Log $global:logFileName " - Échec de la vérification des mise a jours de Windows"
-            $formControlsMain.lbl_chkboxWindowsUpdate.foreground = "red"
+            $global:formControlsMain.lbl_chkboxWindowsUpdate.foreground = "red"
         } 
 }
 
@@ -758,7 +769,7 @@ function Set-GooglePinnedTaskbar
 
 function Complete-Installation
 {
-    $formControlsMain.lblManualComplete.foreground = "DodgerBlue"
+    $global:formControlsMain.lblManualComplete.foreground = "DodgerBlue"
     Add-Log $global:logFileName "Installation de Windows effectué avec Succès"
     Copy-Log $global:logFileName "$env:SystemDrive\Temp"
     Send-FTPLogs $global:appPathSource\$global:logFileName
@@ -781,7 +792,7 @@ function Complete-Installation
     {
         Set-DefaultPDFViewer
     }
-    $formControlsMain.lblManualComplete.foreground = "MediumSeaGreen"
+    $global:formControlsMain.lblManualComplete.foreground = "MediumSeaGreen"
     if ($script:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
     {
         $wuRestart = Get-WindowsUpdateReboot
@@ -796,6 +807,6 @@ function Complete-Installation
     { 
         Invoke-Task -TaskName 'delete _tech' -ExecutedScript "$env:SystemDrive\Temp\Stoolbox\Remove.ps1"
     }
-    $windowMain.Close()
+    $global:windowMain.Close()
     exit
 }
