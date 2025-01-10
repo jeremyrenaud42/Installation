@@ -6,27 +6,39 @@ $global:XamlReaderMain = New-XamlReader $global:xamlDocMain
 $global:windowMain = New-WPFWindowFromXaml $global:XamlReaderMain
 $global:formControlsMain = Get-WPFControlsFromXaml $global:xamlDocMain $global:windowMain $sync
 
-$global:jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
-$global:jsonString = Get-Content -Raw $global:jsonAppsFilePath
-$global:appsInfo = ConvertFrom-Json $global:jsonString
-$global:appNames = $global:appsInfo.psobject.Properties.Name
-$global:appNames | ForEach-Object {
-    $global:softwareName = $_
-    $global:appsInfo.$global:softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path64)
-    $global:appsInfo.$global:softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path32)
-    $global:appsInfo.$global:softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.pathAppData)
-    $global:appsInfo.$global:softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.RemoteName)
+$jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
+$jsonString = Get-Content -Raw $jsonAppsFilePath
+$appsInfo = ConvertFrom-Json $jsonString
+$appNames = $appsInfo.psobject.Properties.Name
+$appNames | ForEach-Object {
+    $softwareName = $_
+    $appsInfo.$softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path64)
+    $appsInfo.$softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path32)
+    $appsInfo.$softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.pathAppData)
+    $appsInfo.$softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.RemoteName)
     }
 
-function Update-InstallationStatus($global:softwareName) 
+function Update-InstallationStatus($softwareName) 
 {
-    $global:appsInfo = ConvertFrom-Json $global:jsonString
-    if (Test-SoftwarePresence $global:appsInfo.$global:softwareName) 
+    $appsInfo = ConvertFrom-Json $jsonString
+    if (Test-SoftwarePresence $appsInfo.$softwareName) 
     {
-        $global:appsInfo.$global:softwareName.InstalledStatus = "1"
-        $global:appsInfo | ConvertTo-Json | Set-Content $global:jsonAppsFilePath
+        $appsInfo.$softwareName.InstalledStatus = "1"
+        $appsInfo | ConvertTo-Json | Set-Content $jsonAppsFilePath
     }
 }
+
+function script:Install-SoftwareMenuApp($softwareName)
+{
+    if ($appNames -contains $softwareName) 
+    {
+        $appsInfo.$softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path64)
+        $appsInfo.$softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.path32)
+        $appsInfo.$softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.pathAppData)
+        $appsInfo.$softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.RemoteName)
+    }
+    Install-Software $appsInfo.$softwareName       
+} 
 
 function Add-Text 
 {
@@ -507,15 +519,13 @@ function Get-CheckBoxStatus
         $checkbox = $_
         $checkboxName = $checkbox.Name
         
-        # Check the status from the JSON
         $global:jsonChkboxContent = Get-Content -Raw $global:jsonSettingsFilePath | ConvertFrom-Json
         $checkboxStatus = $global:jsonChkboxContent.$checkboxName.status
     
-        # If the status is 1, consider it as checked (or take action as needed)
         if ($checkboxStatus -eq 1) 
         {
-            $global:softwareName = "$($checkbox.Content)"
-            Install-Software $global:appsInfo.$global:softwareName
+            $softwareName = "$($checkbox.Content)"
+            Install-Software $appsInfo.$softwareName
         } 
     }
 
@@ -547,14 +557,14 @@ function Test-SoftwarePresence($appInfo)
 
 function Install-Software($appInfo)
 {
-    Add-Text -Text "Installation de $global:softwareName en cours"
+    Add-Text -Text "Installation de $softwareName en cours"
     $window.Dispatcher.Invoke([Windows.Threading.DispatcherPriority]::Background, [action]{}) #Refresh le Text
-    Add-Log $global:logFileName "Installation de $global:softwareName"
+    Add-Log $global:logFileName "Installation de $softwareName"
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
         if($softwareInstallationStatus)
         {
-            Add-Text -Text "- $global:softwareName est déja installé" -SameLine
-            Add-Log $global:logFileName "- $global:softwareName est déja installé"
+            Add-Text -Text "- $softwareName est déja installé" -SameLine
+            Add-Log $global:logFileName "- $softwareName est déja installé"
         }
         elseif($softwareInstallationStatus -eq $false)
         {  
@@ -571,9 +581,9 @@ function Install-SoftwareWithWinget($appInfo)
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
         if($softwareInstallationStatus)
         {
-            Add-Text -Text " - $global:softwareName installé avec succès" -SameLine
-            Add-Log $global:logFileName " - $global:softwareName installé avec succès"
-            Update-InstallationStatus $global:softwareName
+            Add-Text -Text " - $softwareName installé avec succès" -SameLine
+            Add-Log $global:logFileName " - $softwareName installé avec succès"
+            Update-InstallationStatus $softwareName
         } 
         else
         {
@@ -590,9 +600,9 @@ function Install-SoftwareWithChoco($appInfo)
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
     if($softwareInstallationStatus)
     {     
-        Add-Text -Text " - $global:softwareName installé avec succès" -SameLine
-        Add-Log $global:logFileName " - $global:softwareName installé avec succès"
-        Update-InstallationStatus $global:softwareName
+        Add-Text -Text " - $softwareName installé avec succès" -SameLine
+        Add-Log $global:logFileName " - $softwareName installé avec succès"
+        Update-InstallationStatus $softwareName
     }
     else
     {
@@ -610,14 +620,14 @@ function Install-SoftwareWithNinite($appInfo)
     $softwareInstallationStatus = Test-SoftwarePresence $appInfo
     if($softwareInstallationStatus)
     {     
-        Add-Text -Text " - $global:softwareName installé avec succès" -SameLine
-        Add-Log $global:logFileName " - $global:softwareName installé avec succès"
-        Update-InstallationStatus $global:softwareName
+        Add-Text -Text " - $softwareName installé avec succès" -SameLine
+        Add-Log $global:logFileName " - $softwareName installé avec succès"
+        Update-InstallationStatus $softwareName
     }
     else
     {
-        Add-Text -Text " - $global:softwareName a échoué" -colorName "red" -SameLine
-        Add-Log $global:logFileName " - $global:softwareName a échoué"
+        Add-Text -Text " - $softwareName a échoué" -colorName "red" -SameLine
+        Add-Log $global:logFileName " - $softwareName a échoué"
         $Global:failStatus = $true
     } 
 }
@@ -777,7 +787,11 @@ function Complete-Installation
     Send-VoiceMessage "Vous avez terminer la configuration du Windows."
     Add-Text -Text "`n"
     Add-Text -Text "Vous avez terminer la configuration du Windows."
-    Stop-Process -Name "ninite" -Force -erroraction ignore
+    $getNiniteProcess = get-process -name "ninite" -ErrorAction Ignore
+    foreach ($Process in $getNiniteProcess)
+    {
+        Stop-Process $Process -Force -erroraction ignore
+    }
     start-Process -FilePath "$global:appPathSource\caffeine64.exe" -ArgumentList "-appexit"
     if ($global:jsonChkboxContent.chkboxGoogleChrome.status -eq 1)
     {
@@ -797,8 +811,7 @@ function Complete-Installation
             $restartTime = $global:jsonChkboxContent.CbBoxRestartTimer.status
             shutdown /r /t $restartTime
         }  
-    }
-    Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\installation.lock" -Force 
+    } 
     if ($global:jsonChkboxContent.chkboxRemove.status -eq 1)
     { 
         Invoke-Task -TaskName 'delete _tech' -ExecutedScript "$env:SystemDrive\Temp\Stoolbox\Remove.ps1"

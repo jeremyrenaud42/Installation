@@ -49,17 +49,6 @@ function script:Update-CheckboxStatus
 
     $global:jsonChkboxContent | ConvertTo-Json -Depth 10 | Set-Content $global:jsonSettingsFilePath
 }
-function script:Install-SoftwareMenuApp($global:softwareName)
-{
-    if ($global:appNames -contains $global:softwareName) 
-    {
-        $global:appsInfo.$global:softwareName.path64 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path64)
-        $global:appsInfo.$global:softwareName.path32 = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.path32)
-        $global:appsInfo.$global:softwareName.pathAppData = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.pathAppData)
-        $global:appsInfo.$global:softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($global:appsInfo.$global:softwareName.RemoteName)
-    }
-    Install-Software $global:appsInfo.$global:softwareName       
-} 
 
 #Logiciels à cocher automatiquement
 $manufacturerBrand = Get-Manufacturer
@@ -141,10 +130,10 @@ $formControls.btnGo_InstallationConfig.Add_Click({
 })
 
 $formControls.btnReturn_InstallationConfig.Add_Click({
-    Open-Menu #changé
+    Open-Menu
 })
 $formControls.btnQuit_InstallationConfig.Add_Click({
-    Remove-StoolboxApp #changé
+    Remove-StoolboxApp
 })
 $formControls.btnAdobe.Add_Click({
     script:Install-SoftwareMenuApp "Adobe Reader"
