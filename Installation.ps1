@@ -35,9 +35,20 @@ function script:Update-CheckboxStatus
         } 
     }
 
+    $window.FindName("gridSettingsInstallationConfig").Children | 
+    Where-Object { $_ -is [System.Windows.Controls.TextBox] -and $_.Name -like "TxtBx*" } | 
+    ForEach-Object {
+        $textBox = $_
+        $textBoxName = $textBox.Name
+        $textValue = $textBox.Text
+
+        if ($textValue) {
+            $jsonContent.$textBoxName.Status = $textValue
+        }
+    }
+
     $jsonContent | ConvertTo-Json -Depth 10 | Set-Content $jsonSettingsFilePath
 }
-
 function script:Install-SoftwareMenuApp($softwareName)
 {
     $jsonAppsFilePath = "$applicationPath\installation\source\InstallationApps.JSON"
@@ -139,7 +150,14 @@ $formControls.btnGo_InstallationConfig.Add_Click({
         $jsonContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\Menu.lock" -Force 
-    start-Process "$global:appPathSource\caffeine64.exe"
+    $lockFile = "$sourceFolderPath\Installation.lock"
+    $Global:appIdentifier = "Installation.ps1"
+    Test-ScriptInstance $lockFile $Global:appIdentifier
+    $processCaff = get-process -name caffeine64 -ErrorAction SilentlyContinue
+    if($processCaff -eq $false)
+    {
+        start-Process "$global:appPathSource\caffeine64.exe"
+    }
     $window.Close()
     . $env:SystemDrive\_Tech\Applications\installation\source\InstallationOutput.ps1
 })
@@ -212,7 +230,7 @@ $formControls.btnWindowsUpdate.Add_Click({
     $formControls.richTextBxOutput.AppendText("Vérification des mises à jour de Windows`r")
 })
 $formControls.btnDisque.Add_Click({
-    Rename-SystemDrive -NewDiskName $formControls.TxtBkDiskName.Text
+    Rename-SystemDrive -NewDiskName $script:jsonChkboxContent.TxtBxDiskName.status
 })
 $formControls.btnMSStore.Add_Click({
     Update-MsStore

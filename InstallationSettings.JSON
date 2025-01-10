@@ -98,7 +98,7 @@
   "CbBoxSize": {
     "Status": "250"
   },
-  "DiskName": {
+  "TxtBxDiskName": {
     "Status": "OS"
   }
 }
