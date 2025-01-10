@@ -1,6 +1,8 @@
 ﻿Import-Module "$applicationPath\installation\source\Installation.psm1"
 $global:jsonSettingsFilePath = "$global:appPathSource\InstallationSettings.JSON"
 $global:jsonChkboxContent = Get-Content -Raw $global:jsonSettingsFilePath | ConvertFrom-Json
+$global:jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
+
 function script:Update-CheckboxStatus
 {
     $window.FindName("gridSettingsInstallationConfig").Children | 
@@ -50,8 +52,8 @@ function script:Update-CheckboxStatus
 }
 function script:Install-SoftwareMenuApp($softwareName)
 {
-    $jsonAppsFilePath = "$applicationPath\installation\source\InstallationApps.JSON"
-    $jsonString = Get-Content -Raw $jsonAppsFilePath
+    $global:jsonAppsFilePath = "$applicationPath\installation\source\InstallationApps.JSON"
+    $jsonString = Get-Content -Raw $global:jsonAppsFilePath
     $appsInfo = ConvertFrom-Json $jsonString
     $appNames = $appsInfo.psobject.Properties.Name
     if ($appNames -contains $softwareName) 

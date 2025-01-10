@@ -6,8 +6,7 @@ $global:XamlReaderMain = New-XamlReader $global:xamlDocMain
 $global:windowMain = New-WPFWindowFromXaml $global:XamlReaderMain
 $global:formControlsMain = Get-WPFControlsFromXaml $global:xamlDocMain $global:windowMain $sync
 
-$jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
-$jsonString = Get-Content -Raw $jsonAppsFilePath
+$jsonString = Get-Content -Raw $global:jsonAppsFilePath
 $appsInfo = ConvertFrom-Json $jsonString
 $appNames = $appsInfo.psobject.Properties.Name
 $appNames | ForEach-Object {
@@ -20,13 +19,12 @@ $appNames | ForEach-Object {
 
 function Update-InstallationStatus($softwareName) 
 {
-    $jsonAppsFilePath = "$applicationPath\installation\source\InstallationApps.JSON"
-    $jsonString = Get-Content -Raw $jsonAppsFilePath
+    $jsonString = Get-Content -Raw $global:jsonAppsFilePath
     $appsInfo = ConvertFrom-Json $jsonString
     if (Test-SoftwarePresence $appsInfo.$softwareName) 
     {
         $appsInfo.$softwareName.InstalledStatus = "1"
-        $appsInfo | ConvertTo-Json | Set-Content $jsonAppsFilePath
+        $appsInfo | ConvertTo-Json | Set-Content $global:jsonAppsFilePath
     }
 }
 
