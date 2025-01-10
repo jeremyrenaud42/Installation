@@ -6,6 +6,27 @@ $global:XamlReaderMain = New-XamlReader $global:xamlDocMain
 $global:windowMain = New-WPFWindowFromXaml $global:XamlReaderMain
 $global:formControlsMain = Get-WPFControlsFromXaml $global:xamlDocMain $global:windowMain $sync
 
+$global:formControlsMain.btnclose.Add_Click({
+    $global:windowMain.Close()
+    Exit
+})
+$global:formControlsMain.btnmin.Add_Click({
+        $global:windowMain.WindowState = [System.Windows.WindowState]::Minimized
+})
+$global:formControlsMain.Titlebar.Add_MouseDown({
+        $global:windowMain.DragMove()
+})
+ 
+$global:windowMain.add_Closed({
+        Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\installation.lock" -Force 
+        exit
+})
+
+$global:formControlsMain.richTxtBxOutput.add_Textchanged({
+    $global:windowMain.Dispatcher.Invoke([Windows.Threading.DispatcherPriority]::Background, [action]{}) #Refresh le Text
+    $global:formControlsMain.richTxtBxOutput.ScrollToEnd() #scroll en bas
+})
+
 $jsonAppsFilePath = "$global:appPathSource\InstallationApps.JSON"
 $jsonString = Get-Content -Raw $jsonAppsFilePath
 $appsInfo = ConvertFrom-Json $jsonString
@@ -28,7 +49,7 @@ function Update-InstallationStatus($softwareName)
     }
 }
 
-function script:Install-SoftwareMenuApp($softwareName)
+function Install-SoftwareMenuApp($softwareName)
 {
     if ($appNames -contains $softwareName) 
     {
@@ -39,6 +60,72 @@ function script:Install-SoftwareMenuApp($softwareName)
     }
     Install-Software $appsInfo.$softwareName       
 } 
+
+function script:Update-CheckboxStatus
+{
+    $window.FindName("gridSettingsInstallationConfig").Children | 
+    Where-Object { $_ -is [System.Windows.Controls.CheckBox] -and $_.Name -like "chkbox*" } | 
+    ForEach-Object {
+        $checkbox = $_
+        $checkboxName = $checkbox.Name
+        $status = if ($checkbox.IsChecked) { 1 } else { 0 }
+        $global:jsonChkboxContent.$checkboxName.status = $status
+    }
+
+    $window.FindName("gridInstallationConfig").Children | 
+    Where-Object { $_ -is [System.Windows.Controls.CheckBox] -and $_.Name -like "chkbox*" } | 
+    ForEach-Object {
+        $checkbox = $_
+        $checkboxName = $checkbox.Name
+        $status = if ($checkbox.IsChecked) { 1 } else { 0 }
+        $global:jsonChkboxContent.$checkboxName.status = $status
+    }
+
+    $window.FindName("gridSettingsInstallationConfig").Children | 
+    Where-Object { $_ -is [System.Windows.Controls.ComboBox] -and $_.Name -like "CbBox*" } | 
+    ForEach-Object {
+        $comboBox = $_
+        $comboBoxName = $comboBox.Name
+        $selectedValue = $comboBox.SelectedItem.Content
+
+        if ($selectedValue) 
+        {
+            $global:jsonChkboxContent.$comboBoxName.Status = $selectedValue
+        } 
+    }
+
+    $window.FindName("gridSettingsInstallationConfig").Children | 
+    Where-Object { $_ -is [System.Windows.Controls.TextBox] -and $_.Name -like "TxtBx*" } | 
+    ForEach-Object {
+        $textBox = $_
+        $textBoxName = $textBox.Name
+        $textValue = $textBox.Text
+
+        if ($textValue) {
+            $global:jsonChkboxContent.$textBoxName.Status = $textValue
+        }
+    }
+
+    $global:jsonChkboxContent | ConvertTo-Json -Depth 10 | Set-Content $global:jsonSettingsFilePath
+}
+
+function UpdateStepLabelForeGround
+{
+    foreach ($property in $global:jsonChkboxContent.PSObject.Properties) {
+        $checkboxName = $property.Name
+        $checkboxStatus = $property.Value.Status
+        $labelName = "lbl_$checkboxName"
+        $label = $global:windowMain.FindName($labelName)
+    
+        if ($null -ne $label) 
+        {
+            if ($checkboxStatus -eq "1") 
+            {
+                $label.Foreground = 'White'
+            } 
+        } 
+    }
+}
 
 function Add-Text 
 {
@@ -818,4 +905,50 @@ function Complete-Installation
     }
     $global:windowMain.Close()
     exit
+}
+
+function Main
+{
+    UpdateStepLabelForeGround
+    Install-SoftwaresManager
+    if ($global:jsonChkboxContent.chkboxMSStore.status -eq 1)
+    { 
+        Update-MsStore
+    }
+    if ($global:jsonChkboxContent.chkboxDisque.status -eq 1)
+    { 
+        Rename-SystemDrive -NewDiskName $global:jsonChkboxContent.TxtBxDiskName.status
+    }
+    if ($global:jsonChkboxContent.chkboxExplorer.status -eq 1)
+    { 
+        Set-ExplorerDisplay
+    }
+    if ($global:jsonChkboxContent.chkboxBitlocker.status -eq 1)
+    { 
+        Disable-Bitlocker
+    }
+    if ($global:jsonChkboxContent.chkboxStartup.status -eq 1)
+    { 
+        Disable-FastBoot
+    }
+    if ($global:jsonChkboxContent.chkboxClavier.status -eq 1)
+    { 
+        Remove-EngKeyboard 'en-CA'
+    }
+    if ($global:jsonChkboxContent.chkboxConfi.status -eq 1)
+    { 
+        Set-Privacy
+    }
+    if ($global:jsonChkboxContent.chkboxIcone.status -eq 1)
+    { 
+        Enable-DesktopIcon  
+    }
+    Add-Text -Text "`n"
+    Get-CheckBoxStatus
+    Get-ActivationStatus
+    if ($global:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
+    { 
+        Install-WindowsUpdate -UpdateSize $global:jsonChkboxContent.CbBoxSize.status
+    }
+    Complete-Installation
 }
