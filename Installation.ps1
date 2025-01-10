@@ -1,4 +1,4 @@
-﻿#cases qui se coche automatiquement selon des critèere à l'ouverture de la grid
+﻿#cases qui se coche automatiquement selon des critères à l'ouverture de la grid
 $manufacturerBrand = Get-Manufacturer
 if($manufacturerBrand -match 'LENOVO')
 {
