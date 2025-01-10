@@ -1,16 +1,15 @@
 ﻿Import-Module "$applicationPath\installation\source\Installation.psm1"
+$global:jsonSettingsFilePath = "$global:appPathSource\InstallationSettings.JSON"
+$global:jsonChkboxContent = Get-Content -Raw $global:jsonSettingsFilePath | ConvertFrom-Json
 function script:Update-CheckboxStatus
 {
-    $jsonSettingsFilePath = "$applicationPath\installation\source\InstallationSettings.JSON"
-    $jsonContent = Get-Content -Raw $jsonSettingsFilePath | ConvertFrom-Json
-    
     $window.FindName("gridSettingsInstallationConfig").Children | 
     Where-Object { $_ -is [System.Windows.Controls.CheckBox] -and $_.Name -like "chkbox*" } | 
     ForEach-Object {
         $checkbox = $_
         $checkboxName = $checkbox.Name
         $status = if ($checkbox.IsChecked) { 1 } else { 0 }
-        $jsonContent.$checkboxName.status = $status
+        $global:jsonChkboxContent.$checkboxName.status = $status
     }
 
     $window.FindName("gridInstallationConfig").Children | 
@@ -19,7 +18,7 @@ function script:Update-CheckboxStatus
         $checkbox = $_
         $checkboxName = $checkbox.Name
         $status = if ($checkbox.IsChecked) { 1 } else { 0 }
-        $jsonContent.$checkboxName.status = $status
+        $global:jsonChkboxContent.$checkboxName.status = $status
     }
 
     $window.FindName("gridSettingsInstallationConfig").Children | 
@@ -31,7 +30,7 @@ function script:Update-CheckboxStatus
 
         if ($selectedValue) 
         {
-            $jsonContent.$comboBoxName.Status = $selectedValue
+            $global:jsonChkboxContent.$comboBoxName.Status = $selectedValue
         } 
     }
 
@@ -43,11 +42,11 @@ function script:Update-CheckboxStatus
         $textValue = $textBox.Text
 
         if ($textValue) {
-            $jsonContent.$textBoxName.Status = $textValue
+            $global:jsonChkboxContent.$textBoxName.Status = $textValue
         }
     }
 
-    $jsonContent | ConvertTo-Json -Depth 10 | Set-Content $jsonSettingsFilePath
+    $global:jsonChkboxContent | ConvertTo-Json -Depth 10 | Set-Content $global:jsonSettingsFilePath
 }
 function script:Install-SoftwareMenuApp($softwareName)
 {
@@ -123,31 +122,31 @@ $formControls.btnGo_InstallationConfig.Add_Click({
     if($formControls.chkboxDeleteFolder.IsChecked)
     {
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $jsonContent.RemoveDownloadFolder.Status = "1"
-        $jsonContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $global:jsonChkboxContent.RemoveDownloadFolder.Status = "1"
+        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     elseif($formControls.chkboxDeleteFolder.IsChecked -eq $false)
     { 
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $jsonContent.RemoveDownloadFolder.Status = "0"
-        $jsonContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $global:jsonChkboxContent.RemoveDownloadFolder.Status = "0"
+        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
 
     if($formControls.chkboxDeleteBin.IsChecked)
     {
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $jsonContent.EmptyRecycleBin.Status = "1"
-        $jsonContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $global:jsonChkboxContent.EmptyRecycleBin.Status = "1"
+        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     elseif($formControls.chkboxDeleteBin.IsChecked -eq $false)
     { 
         $jsonFilePath = "$sourceFolderPath\Settings.JSON"
-        $jsonContent = Get-Content $jsonFilePath | ConvertFrom-Json
-        $jsonContent.EmptyRecycleBin.Status = "0"
-        $jsonContent | ConvertTo-Json | Set-Content $jsonFilePath
+        $global:jsonChkboxContent = Get-Content $jsonFilePath | ConvertFrom-Json
+        $global:jsonChkboxContent.EmptyRecycleBin.Status = "0"
+        $global:jsonChkboxContent | ConvertTo-Json | Set-Content $jsonFilePath
     }
     Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\Menu.lock" -Force 
     $lockFile = "$sourceFolderPath\Installation.lock"
@@ -227,10 +226,11 @@ $formControls.btnLibreOffice.Add_Click({
 })
 $formControls.btnWindowsUpdate.Add_Click({
     start-Process "ms-settings:windowsupdate"
-    $formControls.richTextBxOutput.AppendText("Vérification des mises à jour de Windows`r")
+    $formControls.rtbOutput_InstallationConfig.AppendText("Vérification des mises à jour de Windows`r")
 })
 $formControls.btnDisque.Add_Click({
-    Rename-SystemDrive -NewDiskName $script:jsonChkboxContent.TxtBxDiskName.status
+    script:Update-CheckboxStatus
+    Rename-SystemDrive -NewDiskName $global:jsonChkboxContent.TxtBxDiskName.status
 })
 $formControls.btnMSStore.Add_Click({
     Update-MsStore

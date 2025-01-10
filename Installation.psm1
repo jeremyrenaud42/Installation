@@ -18,9 +18,6 @@ $appNames | ForEach-Object {
     $appsInfo.$softwareName.RemoteName = $ExecutionContext.InvokeCommand.ExpandString($appsInfo.$softwareName.RemoteName)
     }
 
-$script:jsonSettingsFilePath = "$global:appPathSource\InstallationSettings.JSON"
-$script:jsonChkboxContent = Get-Content -Raw $script:jsonSettingsFilePath | ConvertFrom-Json
-
 function Update-InstallationStatus($softwareName) 
 {
     $jsonAppsFilePath = "$applicationPath\installation\source\InstallationApps.JSON"
@@ -513,8 +510,8 @@ function Get-CheckBoxStatus
         $checkboxName = $checkbox.Name
         
         # Check the status from the JSON
-        $script:jsonChkboxContent = Get-Content -Raw $script:jsonSettingsFilePath | ConvertFrom-Json
-        $checkboxStatus = $script:jsonChkboxContent.$checkboxName.status
+        $global:jsonChkboxContent = Get-Content -Raw $global:jsonSettingsFilePath | ConvertFrom-Json
+        $checkboxStatus = $global:jsonChkboxContent.$checkboxName.status
     
         # If the status is 1, consider it as checked (or take action as needed)
         if ($checkboxStatus -eq 1) 
@@ -700,7 +697,7 @@ function Install-WindowsUpdate
         [int]$UpdateSize = 250
     )
 
-    
+
     $global:formControlsMain.lblProgress.Content = "Mises à jour de Windows"
     $global:formControlsMain.lbl_chkboxWindowsUpdate.foreground = "DodgerBlue"
     Add-Text -Text "Vérification des mises à jour de Windows"
@@ -783,27 +780,27 @@ function Complete-Installation
     Add-Text -Text "Vous avez terminer la configuration du Windows."
     Stop-Process -Name "ninite" -Force -erroraction ignore
     start-Process -FilePath "$global:appPathSource\caffeine64.exe" -ArgumentList "-appexit"
-    if ($script:jsonChkboxContent.chkboxGoogleChrome.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxGoogleChrome.status -eq 1)
     {
         Set-DefaultBrowser
         Set-GooglePinnedTaskbar
     }
-    if ($script:jsonChkboxContent.chkboxAdobe.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxAdobe.status -eq 1)
     {
         Set-DefaultPDFViewer
     }
     $global:formControlsMain.lblManualComplete.foreground = "MediumSeaGreen"
-    if ($script:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
     {
         $wuRestart = Get-WindowsUpdateReboot
         if($wuRestart -eq $true)
         {
-            $restartTime = $script:jsonChkboxContent.CbBoxRestartTimer.status
+            $restartTime = $global:jsonChkboxContent.CbBoxRestartTimer.status
             shutdown /r /t $restartTime
         }  
     }
     Remove-Item -Path "$env:SystemDrive\_Tech\Applications\source\installation.lock" -Force 
-    if ($script:jsonChkboxContent.chkboxRemove.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxRemove.status -eq 1)
     { 
         Invoke-Task -TaskName 'delete _tech' -ExecutedScript "$env:SystemDrive\Temp\Stoolbox\Remove.ps1"
     }

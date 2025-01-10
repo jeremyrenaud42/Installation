@@ -1,7 +1,4 @@
-﻿$script:jsonSettingsFilePath = "$global:appPathSource\InstallationSettings.JSON"
-$script:jsonChkboxContent = Get-Content -Raw $script:jsonSettingsFilePath | ConvertFrom-Json
-
-foreach ($property in $script:jsonChkboxContent.PSObject.Properties) {
+﻿foreach ($property in $global:jsonChkboxContent.PSObject.Properties) {
     $checkboxName = $property.Name
     $checkboxStatus = $property.Value.Status
     $labelName = "lbl_$checkboxName"
@@ -40,44 +37,44 @@ $global:formControlsMain.richTxtBxOutput.add_Textchanged({
 function Main
 {
     Install-SoftwaresManager
-    if ($script:jsonChkboxContent.chkboxMSStore.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxMSStore.status -eq 1)
     { 
         Update-MsStore
     }
-    if ($script:jsonChkboxContent.chkboxDisque.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxDisque.status -eq 1)
     { 
-        Rename-SystemDrive -NewDiskName $script:jsonChkboxContent.TxtBxDiskName.status
+        Rename-SystemDrive -NewDiskName $global:jsonChkboxContent.TxtBxDiskName.status
     }
-    if ($script:jsonChkboxContent.chkboxExplorer.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxExplorer.status -eq 1)
     { 
         Set-ExplorerDisplay
     }
-    if ($script:jsonChkboxContent.chkboxBitlocker.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxBitlocker.status -eq 1)
     { 
         Disable-Bitlocker
     }
-    if ($script:jsonChkboxContent.chkboxStartup.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxStartup.status -eq 1)
     { 
         Disable-FastBoot
     }
-    if ($script:jsonChkboxContent.chkboxClavier.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxClavier.status -eq 1)
     { 
         Remove-EngKeyboard 'en-CA'
     }
-    if ($script:jsonChkboxContent.chkboxConfi.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxConfi.status -eq 1)
     { 
         Set-Privacy
     }
-    if ($script:jsonChkboxContent.chkboxIcone.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxIcone.status -eq 1)
     { 
         Enable-DesktopIcon  
     }
     Add-Text -Text "`n"
     Get-CheckBoxStatus
     Get-ActivationStatus
-    if ($script:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
+    if ($global:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
     { 
-        Install-WindowsUpdate -UpdateSize $script:jsonChkboxContent.CbBoxSize.status
+        Install-WindowsUpdate -UpdateSize $global:jsonChkboxContent.CbBoxSize.status
     }
     Complete-Installation
 }
