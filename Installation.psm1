@@ -244,7 +244,7 @@ function Get-Nuget
         else 
         {
             Add-Log $global:logFileName " - Nuget a échoué"
-            Add-Text -Text " - Nuget a échoué" -colorName = "red" -SameLine
+            Add-Text -Text " - Nuget a échoué" -colorName "red" -SameLine
             $global:formControlsMain.lblNuget.foreground = "red"
         }
     }
