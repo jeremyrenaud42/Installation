@@ -261,7 +261,7 @@ function Install-SoftwaresManager
 {
     $global:formControlsMain.lblProgress.content = "Préparation"
     New-Item -Path "$applicationPath\source\Installation.lock" -ItemType 'File' -Force
-    Add-Log $global:logFileName "Installation de $windowsVersion $OSUpdate le $actualDate"
+    Add-Log $global:logFileName "Installation de $global:windowsVersion $global:OSUpdate le $global:actualDate"
     Clear-RichTextBox $global:sync["richTxtBxOutput"]
     Get-Winget
     Get-Choco
@@ -726,8 +726,8 @@ function Get-ActivationStatus
     Add-Text -Text "`n"
     if($activated -eq "1")
     {
-        Add-Text -Text "$windowsVersion est activé sur cet ordinateur"
-        Add-Log $global:logFileName "$windowsVersion est activé sur cet ordinateur"
+        Add-Text -Text "$global:windowsVersion est activé sur cet ordinateur"
+        Add-Log $global:logFileName "$global:windowsVersion est activé sur cet ordinateur"
         $global:formControlsMain.lblActivation.foreground = "MediumSeaGreen"      
     }
     else 
