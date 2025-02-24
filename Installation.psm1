@@ -879,7 +879,6 @@ function Complete-Installation
     {
         Stop-Process $Process -Force -erroraction ignore
     }
-    start-Process -FilePath "$global:appPathSource\caffeine64.exe" -ArgumentList "-appexit"
     if ($global:jsonChkboxContent.chkboxGoogleChrome.status -eq 1)
     {
         Set-DefaultBrowser
@@ -889,6 +888,7 @@ function Complete-Installation
     {
         Set-DefaultPDFViewer
     }
+    start-Process -FilePath "$global:appPathSource\caffeine64.exe" -ArgumentList "-appexit"
     $global:formControlsMain.lblManualComplete.foreground = "MediumSeaGreen"
     if ($global:jsonChkboxContent.chkboxWindowsUpdate.status -eq 1)
     {
