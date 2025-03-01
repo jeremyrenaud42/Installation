@@ -874,6 +874,7 @@ function Complete-Installation
     Send-VoiceMessage "Vous avez terminer la configuration du Windows."
     Add-Text -Text "`n"
     Add-Text -Text "Vous avez terminer la configuration du Windows."
+    net accounts /maxpwage:unlimited #mot de passe expire à 0
     $getNiniteProcess = get-process -name "ninite" -ErrorAction Ignore
     foreach ($Process in $getNiniteProcess)
     {
