@@ -49,13 +49,13 @@
       "RemoteName": null,
       "RemoteLink": null
     },
-    "GeForce Experience": {
+    "NVIDIA App": {
       "InstalledStatus": "0",
       "path64": "$env:SystemDrive\\Program Files\\NVIDIA Corporation\\NVIDIA GeForce Experience\\NVIDIA GeForce Experience.exe",
       "path32": null,
       "pathAppData": null,
-      "WingetName": "Nvidia.GeForceExperience",
-      "ChocoName": "geforce-experience",
+      "WingetName": null,
+      "ChocoName": "nvidia-app",
       "RemoteName": null,
       "RemoteLink": null
     },
